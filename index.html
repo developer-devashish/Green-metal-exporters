@@ -5,7 +5,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Green Mettle Exporters</title>
 
     <!-- CSS -->
@@ -26,53 +25,81 @@
 
     <!--================ NAVBAR =================-->
 
-    <header class="header">
+    <!--================ HEADER =================-->
+
+<header class="header">
+
     <div class="container">
 
         <!-- Logo -->
         <div class="logo">
+
             <img src="images/logo.png" alt="Green Mettle Logo">
 
             <div class="logo-text">
+
                 <h1>
                     <span class="green">GREEN</span>
-                    <span class="gray">METTLE EXPORTERS</span>
+                    <span class="gray"> METTLE EXPORTERS</span>
                 </h1>
 
                 <p>Go <span>Green</span> Go Global</p>
+
             </div>
+
         </div>
 
         <!-- Navigation -->
-
         <nav class="navbar">
 
             <ul class="nav-links">
 
                 <li><a href="#">Home</a></li>
+
                 <li><a href="#about">About Us</a></li>
+
                 <li><a href="#products">Products</a></li>
+
                 <li><a href="#services">Services</a></li>
+
                 <li><a href="#contact">Contact</a></li>
+
+                <!-- Mobile Get Quote -->
+                <li class="mobile-quote">
+
+                    <a href="#contact" class="quote-mobile-btn">
+
+                        Get Quote
+
+                    </a>
+
+                </li>
 
             </ul>
 
         </nav>
 
-        <a href="#" class="quote-btn">Get Quote</a>
+        <!-- Desktop Get Quote -->
+        <a href="#contact" class="quote-btn">
 
-        <!-- Mobile Menu -->
+            Get Quote
+
+        </a>
+
+        <!-- Mobile Toggle -->
 
         <div class="menu-toggle" id="menu-toggle">
+
             <span></span>
             <span></span>
             <span></span>
             <span></span>
+
         </div>
 
     </div>
-</header>
 
+</header>
 <!-- HOMe -->
 
 <section class="hero">
@@ -356,39 +383,120 @@
 
 
 <!-- =========================
-        OUR PRODUCTS
+      PRODUCTS SECTION
 ========================= -->
 
 <section class="products" id="products">
 
-    <div class="about-section">
+    <div class="section-title">
         <h2>Our Products</h2>
+        <p>Premium quality steel products for global markets.</p>
     </div>
 
-    <div class="product-card">
+    <div class="products-grid">
 
-        <!-- Left Side Image -->
-        <div class="product-image">
-            <img src="images\billets\Steel_Billets.png" alt="Steel Billets">
+        <!-- ================= CARD 1 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img src="images\billets\Steel_Billets.png" alt="Steel Billets">
+                <span class="badge">BEST SELLER</span>
+            </div>
+
+            <div class="product-content">
+
+                <h3>Steel Billets</h3>
+
+                <p>
+                    High-quality steel billets manufactured for rolling mills
+                    and industrial applications.
+                </p>
+
+                <button class="details-btn"
+
+                    data-title="Steel Billets"
+
+                    data-description="High-quality steel billets manufactured for rolling mills and industrial applications."
+
+                    data-images="images/billets/billet1.jpg,
+                                 images/billets/billet2.jpg,
+                                 images/billets/billet3.jpg ">
+
+                    View Details →
+
+                </button>
+
+            </div>
+
         </div>
 
-        <!-- Right Side Content -->
-        <div class="product-content">
+        <!-- ================= CARD 2 ================= -->
 
-            <h2>Steel Billets</h2>
+        <div class="product-card">
 
-            <p>
-                Semi-finished steel products used as raw material for
-                manufacturing TMT bars, wire rods, and other steel products.
-            </p>
+            <div class="product-image">
+                <img src="images\tmt-bars\Tmt_bars.png" alt="TMT Bars">
+                <span class="badge">POPULAR</span>
+            </div>
 
-            <div class="product-features">
-                <ul>
-                    <li>Uniform chemical composition</li>
-                    <li>Excellent dimensional accuracy</li>
-                    <li>High durability</li>
-                    <li>Suitable for rolling mills</li>
-                </ul>
+            <div class="product-content">
+
+                <h3>TMT Bars</h3>
+
+                <p>
+                    Strong and durable reinforcement bars for construction and
+                    infrastructure projects.
+                </p>
+
+                <button class="details-btn"
+
+                    data-title="TMT Bars"
+
+                    data-description="Premium quality TMT Bars available in multiple grades."
+
+                    data-images="images\tmt-bars\tmt1.jpg,
+                                 images\tmt-bars\tmt2.jpg">
+
+                    View Details →
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- ================= CARD 3 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img src="images\steel-coils\Steel_coil.png" alt="Steel Coils">
+                <span class="badge">NEW</span>
+            </div>
+
+            <div class="product-content">
+
+                <h3>Steel Coils</h3>
+
+                <p>
+                    Hot rolled and cold rolled coils available in different
+                    grades and dimensions.
+                </p>
+
+                <button class="details-btn"
+
+                    data-title="Steel Coils"
+
+                    data-description="Premium HR and CR steel coils."
+
+                    data-images="images\steel-coils\coil1.jpg,
+                                 images\steel-coils\coil2.jpg">
+
+                    View Details →
+
+                </button>
+
             </div>
 
         </div>
@@ -397,89 +505,92 @@
 
 </section>
 
-<!-- TMT -->
 
-<section class="products">
 
-    <div class="product-card reverse">
+<!-- ==========================
+        PRODUCT MODAL
+=========================== -->
 
-        <!-- Left Content -->
-        <div class="product-content">
+<div class="product-modal" id="productModal">
 
-            <h2>TMT Bars</h2>
+    <div class="modal-box">
 
-            <p>
-                High-strength reinforcement bars used in residential,
-                commercial, industrial, and infrastructure projects.
-            </p>
+        <span class="close-btn">&times;</span>
 
-            <h3>Features</h3>
+        <div class="modal-left">
 
-            <ul>
-                <li>High tensile strength</li>
-                <li>Excellent ductility</li>
-                <li>Superior earthquake resistance</li>
-                <li>Corrosion resistance</li>
-                <li>Consistent quality standards</li>
-            </ul>
+            <img id="mainImage" src="" alt="">
 
-            <h3>Grades Available</h3>
+            <div class="thumbnail-container">
 
-            <ul>
-                <li>Fe 500</li>
-                <li>Fe 500D</li>
-                <li>Fe 550</li>
-                <li>Fe 550D</li>
-                <li>Fe 600</li>
-            </ul>
+                <img class="thumb">
+                <img class="thumb">
+                <img class="thumb">
+                <img class="thumb">
+
+            </div>
 
         </div>
 
-        <!-- Right Image -->
+        <div class="modal-right">
 
-        <div class="product-image">
+            <h2 id="modalTitle"></h2>
 
-            <img src="images\tmt-bars\Tmt_bars.png" alt="TMT Bars">
+            <p id="modalDescription"></p>
+
+            <table class="spec-table">
+
+                <tr>
+
+                    <td>Material</td>
+
+                    <td>High Grade Steel</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Finish</td>
+
+                    <td>Hot Rolled</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Application</td>
+
+                    <td>Construction & Industrial</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Export</td>
+
+                    <td>Worldwide</td>
+
+                </tr>
+
+            </table>
+
+            <a href="#contact" class="quote-btn">
+
+                Request Quote
+
+            </a>
 
         </div>
+
+        <!-- Navigation -->
+
+        <button class="nav prev">&#10094;</button>
+
+        <button class="nav next">&#10095;</button>
 
     </div>
 
-</section>
-
-<!-- steel-coils -->
-
-<section class="products">
-
-    <div class="product-card">
-
-        <!-- Left Image -->
-        <div class="product-image">
-            <img src="images\steel-coils\Steel_coil.png" alt="Steel Coils">
-        </div>
-
-        <!-- Right Content -->
-        <div class="product-content">
-
-            <h2>Steel Coils</h2>
-
-            <p>
-                Versatile steel products used in manufacturing, construction,
-                automotive, and industrial applications.
-            </p>
-
-            <ul>
-                <li>Hot Rolled Coils (HRC)</li>
-                <li>Cold Rolled Coils (CRC)</li>
-                <li>Galvanized Coils (GI)</li>
-                <li>Customized Steel Coils</li>
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
 <!-- export markets -->
@@ -487,7 +598,7 @@
 
 <section class="export-market" id="export">
 
-    <div class="about-section">
+    <div class="about-heading">
         <h2>Export Market</h2>
     </div>
 
@@ -546,7 +657,7 @@
 
 <section class="products" id="services">
 
-    <div class="about-section">
+    <div class="about-heading">
         <h2>Our Services</h2>
         <p>
             We provide complete steel sourcing and export solutions with quality,
