@@ -30,18 +30,15 @@ HEADER
 ========================= */
 
 .header{
-
     width:100%;
     background:#fff;
     box-shadow:0 3px 10px rgba(0,0,0,.08);
     position:sticky;
     top:0;
     z-index:1000;
-
 }
 
 .container{
-
     width:min(95%,1400px);
     margin:auto;
 
@@ -51,120 +48,140 @@ HEADER
 
     padding:18px 0;
 
+    position:relative;
 }
 
-/* Logo */
+/* =========================
+LOGO
+========================= */
 
 .logo{
-
     display:flex;
     align-items:center;
     gap:15px;
-
 }
 
 .logo img{
-
     width:75px;
-
 }
 
 .logo-text h1{
-
     font-size:2rem;
     line-height:1.1;
-
 }
 
 .green{
-
     color:#139548;
-
 }
 
 .gray{
-
     color:#555;
-
 }
 
 .logo-text p{
-
     font-size:1rem;
     font-weight:600;
-
 }
 
 .logo-text span{
-
     color:#139548;
-
 }
 
-/* Navigation */
+/* =========================
+NAVIGATION
+========================= */
+
+.navbar{
+    display:flex;
+    align-items:center;
+}
 
 .nav-links{
-
     display:flex;
     gap:40px;
-
 }
 
 .nav-links a{
-
     color:#123d8d;
     font-weight:600;
     transition:.3s;
-
 }
 
 .nav-links a:hover{
-
     color:#139548;
-
 }
 
-/* Button */
+/* =========================
+BUTTON
+========================= */
 
 .quote-btn{
-
     background:#139548;
     color:#fff;
-
     padding:14px 32px;
-
     border-radius:40px;
-
     font-weight:600;
-
     transition:.3s;
-
 }
 
 .quote-btn:hover{
-
     background:#0d7d39;
-
 }
 
-/* Hamburger */
+/* =========================
+GRID MENU ICON
+========================= */
 
 .menu-toggle{
 
+    width:48px;
+    height:48px;
+
+    border:2px solid #163d84;
+    border-radius:5px;
+
     display:none;
+
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(2,1fr);
+
+    gap:6px;
+
+    padding:8px;
+
     cursor:pointer;
+
+    background:#fff;
+
+    transition:.3s;
 
 }
 
 .menu-toggle span{
 
-    display:block;
-    width:28px;
-    height:3px;
-    margin:5px;
+    width:8px;
+    height:8px;
 
-    background:#123d8d;
+    background:#163d84;
+
+    border-radius:2px;
+
+    justify-self:center;
+    align-self:center;
+
     transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    background:#163d84;
+
+}
+
+.menu-toggle:hover span{
+
+    background:#fff;
 
 }
 
@@ -175,27 +192,19 @@ TABLET
 @media(max-width:992px){
 
 .logo img{
-
-width:60px;
-
+    width:60px;
 }
 
 .logo-text h1{
-
-font-size:1.6rem;
-
+    font-size:1.6rem;
 }
 
 .nav-links{
-
-gap:22px;
-
+    gap:22px;
 }
 
 .quote-btn{
-
-padding:12px 22px;
-
+    padding:12px 22px;
 }
 
 }
@@ -207,87 +216,92 @@ MOBILE
 @media(max-width:768px){
 
 .container{
+    padding:15px;
+}
 
-padding:15px;
-
+.logo img{
+    width:55px;
 }
 
 .logo-text h1{
-
-font-size:1.3rem;
-
+    font-size:1.25rem;
 }
 
 .logo-text p{
-
-font-size:.85rem;
-
+    font-size:.8rem;
 }
 
 .quote-btn{
-
-display:none;
-
+    display:none;
 }
+
+/* SHOW GRID ICON */
 
 .menu-toggle{
 
-display:block;
+    display:grid;
+
+    width:46px;
+    height:46px;
+
+    position:relative;
+
+    z-index:1002;
 
 }
 
+/* MOBILE MENU */
+
 .navbar{
 
-position:absolute;
+    position:absolute;
 
-top:100%;
-left:0;
+    top:100%;
+    left:0;
 
-width:100%;
+    width:100%;
 
-background:#fff;
+    background:#fff;
 
-max-height:0;
+    max-height:0;
 
-overflow:hidden;
+    overflow:hidden;
 
-transition:.4s;
+    transition:.4s ease;
 
-box-shadow:0 5px 10px rgba(0,0,0,.08);
+    box-shadow:0 8px 15px rgba(0,0,0,.08);
 
 }
 
 .navbar.active{
 
-max-height:400px;
+    max-height:400px;
 
 }
 
 .nav-links{
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:0;
+    gap:0;
 
 }
 
 .nav-links li{
 
-border-bottom:1px solid #eee;
+    border-bottom:1px solid #eee;
 
 }
 
 .nav-links a{
 
-display:block;
+    display:block;
 
-padding:18px;
-
-}
+    padding:18px 20px;
 
 }
 
-
+}
 /* sliders */
 
 .hero{
@@ -1876,467 +1890,290 @@ right:-45px;
 
 }
 
-/*=========================================
-            EXPORT MARKETS
-=========================================*/
+/*==============================
+EXPORT MARKET
+===============================*/
 
-.export-markets{
+.export-market{
     width:100%;
-    padding:90px 6%;
-    background:linear-gradient(to bottom,#eef8ff,#ffffff);
+    padding:80px 8%;
+    background:#f7f8fb;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .section-title h2{
-    font-size:62px;
+    font-size:38px;
+    color:#0d3b66;
     font-weight:700;
-    color:#13387c;
-    margin-bottom:20px;
 }
 
-.section-title p{
-    font-size:24px;
-    color:#555;
-}
-
-/*=========================================
-            CONTAINER
-=========================================*/
-
-.markets-container{
-
-    max-width:1500px;
-
+.market-container{
+    max-width:900px;
     margin:auto;
-
     background:#fff;
-
-    border-radius:35px;
-
-    padding:70px;
-
+    padding:45px;
+    border-radius:30px;
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-    box-shadow:0 18px 45px rgba(0,0,0,.08);
-
+    gap:25px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
 }
-
-/*=========================================
-            CARD
-=========================================*/
 
 .market-card{
-
     background:#fff;
-
-    border:1px solid #e4ebf5;
-
-    border-radius:24px;
-
-    min-height:180px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    cursor:pointer;
-
+    border-radius:18px;
+    padding:25px 15px;
+    text-align:center;
+    border:1px solid #e7eaf2;
     transition:all .35s ease;
+    cursor:pointer;
+    box-shadow:0 5px 12px rgba(0,0,0,.05);
+}
 
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-
+.market-card img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+    margin-bottom:15px;
+    transition:.3s;
 }
 
 .market-card h3{
-
-    font-size:56px;
-
-    font-weight:500;
-
-    color:#333;
-
-    margin-bottom:18px;
-
-    transition:.35s;
-
+    font-size:18px;
+    color:#1d3557;
+    font-weight:600;
+    transition:.3s;
 }
 
-.market-card h4{
-
-    font-size:30px;
-
-    color:#13387c;
-
-    font-weight:700;
-
-    transition:.35s;
-
-}
-
-.market-card .icon{
-
-    font-size:55px;
-
-    margin-bottom:18px;
-
-    transition:.35s;
-
-}
-
-/*=========================================
-        ACTIVE CARD (NEPAL)
-=========================================*/
-
-.market-card.active{
-
-    background:#143B82;
-
-    border-color:#143B82;
-
-    box-shadow:0 18px 40px rgba(20,59,130,.35);
-
-}
-
-.market-card.active h3,
-.market-card.active h4,
-.market-card.active .icon{
-
-    color:#fff;
-
-}
-
-/*=========================================
-        HOVER EFFECT
-=========================================*/
+/* Hover */
 
 .market-card:hover{
-
-    background:#143B82;
-
-    border-color:#143B82;
-
+    background:#0056b3;
     transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(20,59,130,.35);
-
+    box-shadow:0 18px 30px rgba(0,86,179,.30);
 }
 
-.market-card:hover h3,
-.market-card:hover h4,
-.market-card:hover .icon{
-
+.market-card:hover h3{
     color:#fff;
-
 }
 
-/*=========================================
-        LARGE TABLET
-=========================================*/
-
-@media(max-width:1200px){
-
-.markets-container{
-
-    grid-template-columns:repeat(2,1fr);
-
-    padding:50px;
-
-    gap:25px;
-
+.market-card:hover img{
+    transform:scale(1.08);
 }
 
-.section-title h2{
-
-    font-size:52px;
-
-}
-
-.section-title p{
-
-    font-size:22px;
-
-}
-
-}
-
-/*=========================================
-            TABLET
-=========================================*/
-
-@media(max-width:768px){
-
-.export-markets{
-
-    padding:60px 20px;
-
-}
-
-.section-title{
-
-    margin-bottom:40px;
-
-}
-
-.section-title h2{
-
-    font-size:40px;
-
-}
-
-.section-title p{
-
-    font-size:18px;
-
-}
-
-.markets-container{
-
-    grid-template-columns:1fr;
-
-    padding:25px;
-
-    gap:20px;
-
-}
-
-.market-card{
-
-    min-height:150px;
-
-}
-
-.market-card h3{
-
-    font-size:44px;
-
-}
-
-.market-card h4{
-
-    font-size:24px;
-
-}
-
-.market-card .icon{
-
-    font-size:44px;
-
-}
-
-}
-
-/*=========================================
-        SMALL MOBILE
-=========================================*/
-
-@media(max-width:480px){
-
-.export-markets{
-
-    padding:45px 15px;
-
-}
-
-.section-title h2{
-
-    font-size:30px;
-
-}
-
-.section-title p{
-
-    font-size:16px;
-
-}
-
-.markets-container{
-
-    padding:18px;
-
-    border-radius:20px;
-
-}
-
-.market-card{
-
-    min-height:130px;
-
-    border-radius:18px;
-
-}
-
-.market-card h3{
-
-    font-size:36px;
-
-}
-
-.market-card h4{
-
-    font-size:20px;
-
-}
-
-.market-card .icon{
-
-    font-size:38px;
-
-}
+/*==============================
+TABLET
+===============================*/
+
+@media (max-width:991px){
+
+    .export-market{
+        padding:70px 6%;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .market-container{
+        grid-template-columns:repeat(2,1fr);
+        padding:30px;
+        gap:20px;
+    }
+
+    .market-card{
+        padding:22px 15px;
+    }
+
+    .market-card img{
+        width:42px;
+        height:42px;
+    }
+
+    .market-card h3{
+        font-size:16px;
+    }
 
 }
 
 /*==============================
-        SERVICES SECTION
-==============================*/
+MOBILE
+===============================*/
+
+@media (max-width:768px){
+
+    .export-market{
+        padding:60px 5%;
+    }
+
+    .section-title{
+        margin-bottom:35px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .market-container{
+        grid-template-columns:repeat(2,1fr);
+        padding:20px;
+        gap:15px;
+        border-radius:20px;
+    }
+
+    .market-card{
+        padding:18px 10px;
+        border-radius:15px;
+    }
+
+    .market-card img{
+        width:36px;
+        height:36px;
+        margin-bottom:10px;
+    }
+
+    .market-card h3{
+        font-size:15px;
+    }
+
+}
+
+/*==============================
+SMALL MOBILE
+===============================*/
+
+@media (max-width:480px){
+
+    .export-market{
+        padding:50px 4%;
+    }
+
+    .market-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+        padding:15px;
+    }
+
+    .market-card{
+        padding:15px 8px;
+    }
+
+    .market-card img{
+        width:32px;
+        height:32px;
+    }
+
+    .market-card h3{
+        font-size:13px;
+    }
+
+}
+
+/*==============================
+VERY SMALL DEVICES
+===============================*/
+
+@media (max-width:360px){
+
+    .market-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/*==============================
+SERVICES
+===============================*/
 
 .services{
     width:100%;
     padding:80px 8%;
-    background:#fff;
+    background:#f7f8fb;
 }
 
-/* Heading */
-
-.services-heading{
+.services .section-title{
     text-align:center;
     margin-bottom:60px;
 }
 
-.services-heading span{
-    color:#0b8c43;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    font-weight:700;
-    font-size:18px;
+.services .section-title h2{
+    font-size:38px;
+    color:#0d3b66;
+    margin-bottom:15px;
 }
 
-.services-heading h2{
-    font-size:60px;
-    color:#153d82;
-    margin:18px 0;
-    font-weight:800;
-}
-
-.services-heading p{
-    max-width:850px;
+.services .section-title p{
+    max-width:750px;
     margin:auto;
-    color:#555;
+    color:#666;
     line-height:1.8;
-    font-size:22px;
 }
 
-/* Card */
+.services-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
 
 .service-card{
-
-    display:flex;
-    align-items:center;
     background:#fff;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-    transition:.4s;
+    padding:35px 30px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
 }
 
 .service-card:hover{
-
+    background:#0056b3;
     transform:translateY(-8px);
-
-    box-shadow:0 20px 45px rgba(0,0,0,.15);
-
 }
 
-/* Left Image */
-
-.service-image{
-
-    flex:1;
-}
-
-.service-image img{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-
-}
-
-/* Right Content */
-
-.service-content{
-
-    flex:1;
-
-    padding:60px;
-
-}
-
-.service-content h3{
-
-    color:#153d82;
-    font-size:50px;
-    margin-bottom:25px;
-    font-weight:800;
-
-}
-
-.service-content p{
-
-    font-size:24px;
-    color:#444;
-    line-height:1.8;
-    margin-bottom:35px;
-
-}
-
-.service-content ul{
-
-    list-style:none;
-
-}
-
-.service-content ul li{
-
-    font-size:22px;
-    margin-bottom:20px;
-    color:#333;
-
+.service-icon{
+    width:70px;
+    height:70px;
+    background:#0056b3;
+    color:#fff;
+    border-radius:50%;
     display:flex;
+    justify-content:center;
     align-items:center;
-
-}
-
-.service-content ul li::before{
-
-    content:"✓";
-
-    color:#0b8c43;
-
-    font-weight:bold;
-
     font-size:28px;
-
-    margin-right:18px;
-
+    margin-bottom:20px;
 }
 
+.service-card:hover .service-icon{
+    background:#fff;
+    color:#0056b3;
+}
+
+.service-card h3{
+    color:#0d3b66;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.service-card p{
+    color:#666;
+    line-height:1.8;
+    transition:.3s;
+}
+
+.service-card ul{
+    padding-left:20px;
+    color:#666;
+    line-height:1.8;
+    transition:.3s;
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover ul{
+    color:#fff;
+}
 /*==============================
       Tablet
 ==============================*/
@@ -2389,100 +2226,29 @@ right:-45px;
 @media(max-width:768px){
 
 .services{
-
-    padding:60px 20px;
-
+    padding:60px 5%;
 }
 
-.services-heading{
-
-    margin-bottom:35px;
-
+.services .section-title h2{
+    font-size:30px;
 }
 
-.services-heading span{
-
-    font-size:14px;
-    letter-spacing:3px;
-
-}
-
-.services-heading h2{
-
-    font-size:40px;
-
-}
-
-.services-heading p{
-
-    font-size:17px;
-    line-height:1.7;
-
+.services-container{
+    grid-template-columns:1fr;
+    gap:20px;
 }
 
 .service-card{
-
-    flex-direction:column;
-
-    border-radius:20px;
-
+    padding:25px;
 }
 
-.service-image{
-
-    width:100%;
-
-}
-
-.service-image img{
-
-    width:100%;
-    height:260px;
-
-}
-
-.service-content{
-
-    width:100%;
-
-    padding:30px 25px;
-
-}
-
-.service-content h3{
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
-}
-
-.service-content p{
-
-    font-size:17px;
-
-    margin-bottom:25px;
-
-}
-
-.service-content ul li{
-
-    font-size:16px;
-
-    margin-bottom:16px;
-
-}
-
-.service-content ul li::before{
-
-    font-size:22px;
-
-    margin-right:12px;
-
+.service-icon{
+    width:60px;
+    height:60px;
+    font-size:24px;
 }
 
 }
-
 
 /*==============================
     Small Phones
