@@ -1374,7 +1374,7 @@ VISION SECTION
     width:16px;
     height:16px;
 
-    background:#1a9a44;
+    /* background:#1a9a44; */
 
     border-radius:4px;
 
@@ -2272,17 +2272,9 @@ SMALL MOBILE
 }
 
 
-/*==============================
-VERY SMALL DEVICES
-===============================*/
 
-@media (max-width:360px){
 
-    .market-container{
-        grid-template-columns:1fr;
-    }
 
-}
 
 /*==============================
 SERVICES
