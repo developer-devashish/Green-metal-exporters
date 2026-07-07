@@ -104,34 +104,25 @@ dots.forEach((dot,i)=>{
 
 setInterval(nextSlide,7000);
 
-
-
 /* =====================================
         PRODUCT GALLERY POPUP
 ===================================== */
 
 const modal = document.getElementById("productModal");
-
 const closeBtn = document.querySelector(".close-btn");
 
 const mainImage = document.getElementById("mainImage");
-
 const modalTitle = document.getElementById("modalTitle");
-
 const modalDescription = document.getElementById("modalDescription");
 
 const thumbs = document.querySelectorAll(".thumb");
-
 const detailButtons = document.querySelectorAll(".details-btn");
 
 const modalPrev = document.querySelector(".modal-prev");
-
 const modalNext = document.querySelector(".modal-next");
 
 let images = [];
-
 let currentImage = 0;
-
 
 
 /* =====================================
@@ -142,37 +133,23 @@ detailButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
+        // Open Modal
         modal.classList.add("active");
-
         document.body.classList.add("modal-open");
 
-        // Title
+        // Product Title
         modalTitle.textContent = button.dataset.title;
 
-        // Description Formatting
-        let description = button.dataset.description;
+        // Load Hidden HTML Description
+        const descriptionBox = document.getElementById(button.dataset.description);
 
-        description = description
+        if (descriptionBox) {
+            modalDescription.innerHTML = descriptionBox.innerHTML;
+        } else {
+            modalDescription.innerHTML = "<p>Description not available.</p>";
+        }
 
-            // Preserve line breaks
-          .replace(/Available Sizes for Export/g,
-                "<br><strong>Available Sizes for Export</strong>")
-
-            .replace(/Length Options/g,
-                "<br><strong>Length Options</strong>")
-
-            .replace(/Grades Available/g,
-                "<br><strong>Grades Available</strong>")
-
-            .replace(/Available Types/g,
-                "<br><strong>Available Types</strong>")
-
-            .replace(/Features/g,
-                "<br><strong>Features</strong>")
-
-        modalDescription.innerHTML = description;
-
-        // Images
+        // Load Images
         images = button.dataset.images
             .split(",")
             .map(img => img.trim());
@@ -190,29 +167,26 @@ detailButtons.forEach(button => {
         UPDATE GALLERY
 ===================================== */
 
-function updateGallery(){
+function updateGallery() {
 
     mainImage.src = images[currentImage];
 
-    thumbs.forEach((thumb,index)=>{
+    thumbs.forEach((thumb, index) => {
 
-        if(images[index]){
+        if (images[index]) {
 
             thumb.src = images[index];
-
             thumb.style.display = "block";
 
             thumb.classList.remove("active-thumb");
 
-            if(index===currentImage){
+            if (index === currentImage) {
 
                 thumb.classList.add("active-thumb");
 
             }
 
-        }
-
-        else{
+        } else {
 
             thumb.style.display = "none";
 
@@ -227,11 +201,11 @@ function updateGallery(){
         THUMBNAILS
 ===================================== */
 
-thumbs.forEach((thumb,index)=>{
+thumbs.forEach((thumb, index) => {
 
-    thumb.addEventListener("click",()=>{
+    thumb.addEventListener("click", () => {
 
-        currentImage=index;
+        currentImage = index;
 
         updateGallery();
 
@@ -244,21 +218,21 @@ thumbs.forEach((thumb,index)=>{
         NEXT IMAGE
 ===================================== */
 
-if(modalNext){
+if (modalNext) {
 
-modalNext.addEventListener("click",()=>{
+    modalNext.addEventListener("click", () => {
 
-    currentImage++;
+        currentImage++;
 
-    if(currentImage>=images.length){
+        if (currentImage >= images.length) {
 
-        currentImage=0;
+            currentImage = 0;
 
-    }
+        }
 
-    updateGallery();
+        updateGallery();
 
-});
+    });
 
 }
 
@@ -267,47 +241,46 @@ modalNext.addEventListener("click",()=>{
         PREVIOUS IMAGE
 ===================================== */
 
-if(modalPrev){
+if (modalPrev) {
 
-modalPrev.addEventListener("click",()=>{
+    modalPrev.addEventListener("click", () => {
 
-    currentImage--;
+        currentImage--;
 
-    if(currentImage<0){
+        if (currentImage < 0) {
 
-        currentImage=images.length-1;
+            currentImage = images.length - 1;
 
-    }
+        }
 
-    updateGallery();
+        updateGallery();
 
-});
+    });
 
 }
 
 
 /* =====================================
-            CLOSE
+            CLOSE MODAL
 ===================================== */
 
-function closeModal(){
+function closeModal() {
 
     modal.classList.remove("active");
-
     document.body.classList.remove("modal-open");
 
 }
 
-closeBtn.addEventListener("click",closeModal);
+closeBtn.addEventListener("click", closeModal);
 
 
 /* =====================================
         CLICK OUTSIDE
 ===================================== */
 
-window.addEventListener("click",(e)=>{
+window.addEventListener("click", (e) => {
 
-    if(e.target===modal){
+    if (e.target === modal) {
 
         closeModal();
 
@@ -317,12 +290,12 @@ window.addEventListener("click",(e)=>{
 
 
 /* =====================================
-            KEYBOARD
+        ESC KEY
 ===================================== */
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown", (e) => {
 
-    if(e.key==="Escape"){
+    if (e.key === "Escape") {
 
         closeModal();
 
@@ -335,17 +308,17 @@ document.addEventListener("keydown",(e)=>{
     ARROW KEY NAVIGATION
 ===================================== */
 
-document.addEventListener("keydown",(e)=>{
+document.addEventListener("keydown", (e) => {
 
-    if(!modal.classList.contains("active")) return;
+    if (!modal.classList.contains("active")) return;
 
-    if(e.key==="ArrowRight"){
+    if (e.key === "ArrowRight") {
 
         currentImage++;
 
-        if(currentImage>=images.length){
+        if (currentImage >= images.length) {
 
-            currentImage=0;
+            currentImage = 0;
 
         }
 
@@ -353,13 +326,13 @@ document.addEventListener("keydown",(e)=>{
 
     }
 
-    if(e.key==="ArrowLeft"){
+    if (e.key === "ArrowLeft") {
 
         currentImage--;
 
-        if(currentImage<0){
+        if (currentImage < 0) {
 
-            currentImage=images.length-1;
+            currentImage = images.length - 1;
 
         }
 
