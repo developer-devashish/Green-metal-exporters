@@ -133,25 +133,43 @@ let images = [];
 let currentImage = 0;
 
 
+
 /* =====================================
         OPEN POPUP
 ===================================== */
 
-detailButtons.forEach(button=>{
+detailButtons.forEach(button => {
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
         modal.classList.add("active");
 
         document.body.classList.add("modal-open");
 
+        // Title
         modalTitle.textContent = button.dataset.title;
 
-        modalDescription.textContent = button.dataset.description;
+        // Description Formatting
+        let description = button.dataset.description;
 
+        description = description
+
+            // Preserve line breaks
+            .replace(/\n/g, "<br>")
+
+            // Headings
+            .replace(/Available Sizes for Export/g, "<br><br><strong>Available Sizes for Export</strong>")
+            .replace(/Available Types/g, "<br><br><strong>Available Types</strong>")
+            .replace(/Length Options/g, "<br><br><strong>Length Options</strong>")
+            .replace(/Grades Available/g, "<br><br><strong>Grades Available</strong>")
+            .replace(/Features/g, "<br><br><strong>Features</strong>");
+
+        modalDescription.innerHTML = description;
+
+        // Images
         images = button.dataset.images
             .split(",")
-            .map(img=>img.trim());
+            .map(img => img.trim());
 
         currentImage = 0;
 

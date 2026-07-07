@@ -50,6 +50,8 @@ ul{
     position:relative;
 }
 
+
+
 /* =========================
         LOGO
 ========================= */
@@ -64,27 +66,45 @@ ul{
     width:130px;
 }
 
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* Remove any decorative line */
+.logo-text::before,
+.logo-text::after,
+.logo-text h1::before,
+.logo-text h1::after{
+    content:none !important;
+    display:none !important;
+}
+
 .logo-text h1{
     font-size:2rem;
     line-height:1.1;
+    margin:0;
+    padding:0;
 }
 
-.green{
-    color:#139548;
+
+
+.greens{
+    color:#139548
 }
 
-.gray{
+.grays{
     color:#555;
 }
 
 .logo-text p{
     font-size:1rem;
     font-weight:600;
+    margin-top:5px;
 }
 
-.logo-text span{
-    color:#139548;
-}
+
 
 /* =========================
       NAVIGATION
@@ -239,9 +259,7 @@ ul{
 
 }
 
-/* =========================
-        MOBILE
-========================= */
+
 
 /* =========================
         MOBILE
@@ -1530,6 +1548,10 @@ right:-45px;
       PRODUCT GRID
 ==========================*/
 
+/*==========================
+        PRODUCTS
+==========================*/
+
 .products-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -1615,6 +1637,13 @@ right:-45px;
 /*==========================
         MODAL
 ==========================*/
+.modal-prev{
+    left:15px;
+}
+
+.modal-next{
+    right:15px;
+}
 
 .product-modal{
     position:fixed;
@@ -1623,43 +1652,34 @@ right:-45px;
     display:none;
     justify-content:center;
     align-items:center;
-    padding:30px;
+    padding:25px;
     z-index:9999;
 }
 
 .product-modal.active{
     display:flex;
-    animation:fade .3s;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
 }
 
 .modal-box{
     position:relative;
-    width:1100px;
-    max-width:100%;
+    width:1350px;
+    max-width:96%;
+    height:90vh;
     background:#fff;
     border-radius:18px;
-    overflow:hidden;
     display:grid;
-    grid-template-columns:1.2fr 1fr;
+    grid-template-columns:55% 45%;
+    overflow:hidden;
 }
 
 .close-btn{
     position:absolute;
-    right:20px;
     top:15px;
+    right:20px;
     font-size:35px;
-    cursor:pointer;
     color:#666;
-    z-index:5;
+    cursor:pointer;
+    z-index:100;
 }
 
 .close-btn:hover{
@@ -1671,7 +1691,12 @@ right:-45px;
 ==========================*/
 
 .modal-left{
-    padding:30px;
+    padding:25px;
+    position:sticky;
+    top:0;
+    height:90vh;
+    overflow:hidden;
+    background:#fff;
 }
 
 #mainImage{
@@ -1682,11 +1707,11 @@ right:-45px;
 }
 
 .thumbnail-container{
-    margin-top:18px;
+    margin-top:20px;
     display:flex;
-    gap:12px;
     justify-content:center;
     flex-wrap:wrap;
+    gap:12px;
 }
 
 .thumb{
@@ -1699,9 +1724,9 @@ right:-45px;
     transition:.3s;
 }
 
-.thumb:hover{
+.thumb:hover,
+.active-thumb{
     border-color:#0B4FA2;
-    transform:scale(1.05);
 }
 
 /*==========================
@@ -1710,6 +1735,7 @@ right:-45px;
 
 .modal-right{
     padding:40px;
+    overflow-y:auto;
 }
 
 .modal-right h2{
@@ -1718,16 +1744,25 @@ right:-45px;
     margin-bottom:20px;
 }
 
-.modal-right p{
+#modalDescription{
     color:#666;
-    line-height:1.8;
-    margin-bottom:30px;
+    line-height:1.9;
+    font-size:16px;
+}
+
+#modalDescription strong{
+    display:block;
+    margin:28px 0 12px;
+    color:#0B4FA2;
+    font-size:22px;
+    font-weight:700;
 }
 
 .spec-table{
     width:100%;
     border-collapse:collapse;
-    margin-bottom:35px;
+    margin-top:35px;
+    margin-bottom:30px;
 }
 
 .spec-table td{
@@ -1737,7 +1772,6 @@ right:-45px;
 
 .spec-table td:first-child{
     font-weight:700;
-    color:#222;
 }
 
 .quote-btn{
@@ -1755,6 +1789,23 @@ right:-45px;
 }
 
 /*==========================
+        SCROLLBAR
+==========================*/
+
+.modal-right::-webkit-scrollbar{
+    width:8px;
+}
+
+.modal-right::-webkit-scrollbar-thumb{
+    background:#0B4FA2;
+    border-radius:10px;
+}
+
+.modal-right::-webkit-scrollbar-track{
+    background:#eee;
+}
+
+/*==========================
       NAV BUTTONS
 ==========================*/
 
@@ -1762,22 +1813,23 @@ right:-45px;
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    width:45px;
-    height:45px;
+    width:55px;
+    height:55px;
     border:none;
     border-radius:50%;
     background:#0B4FA2;
     color:#fff;
-    font-size:22px;
+    font-size:24px;
     cursor:pointer;
+    z-index:50;
 }
 
 .prev{
-    left:15px;
+    left:18px;
 }
 
 .next{
-    right:15px;
+    right:18px;
 }
 
 .nav:hover{
@@ -1785,7 +1837,7 @@ right:-45px;
 }
 
 /*==========================
-      TABLET
+        TABLET
 ==========================*/
 
 @media(max-width:992px){
@@ -1795,11 +1847,20 @@ right:-45px;
 }
 
 .modal-box{
+    width:95%;
+    height:95vh;
     grid-template-columns:1fr;
 }
 
+.modal-left{
+    position:relative;
+    height:auto;
+    padding:20px;
+}
+
 .modal-right{
-    padding:30px;
+    padding:25px;
+    overflow:visible;
 }
 
 #mainImage{
@@ -1840,24 +1901,32 @@ right:-45px;
 
 .modal-box{
     width:100%;
-    max-height:95vh;
+    height:95vh;
+    display:block;
     overflow-y:auto;
 }
 
 .modal-left{
-    padding:20px;
+    position:relative;
+    height:auto;
+    padding:18px;
 }
 
 .modal-right{
     padding:20px;
+    overflow:visible;
 }
 
 #mainImage{
-    height:240px;
+    height:250px;
+}
+
+.thumbnail-container{
+    gap:10px;
 }
 
 .thumb{
-    width:65px;
+    width:70px;
     height:55px;
 }
 
@@ -1865,14 +1934,26 @@ right:-45px;
     font-size:26px;
 }
 
+#modalDescription{
+    font-size:15px;
+    line-height:1.8;
+}
+
+#modalDescription strong{
+    font-size:19px;
+}
+
 .close-btn{
     font-size:30px;
-    right:15px;
 }
 
 .quote-btn{
     width:100%;
     text-align:center;
+}
+
+.nav{
+    display:none;
 }
 
 }
@@ -1888,7 +1969,7 @@ right:-45px;
 }
 
 #mainImage{
-    height:220px;
+    height:210px;
 }
 
 .thumb{
@@ -1898,6 +1979,10 @@ right:-45px;
 
 .modal-right h2{
     font-size:22px;
+}
+
+#modalDescription{
+    font-size:14px;
 }
 
 }
