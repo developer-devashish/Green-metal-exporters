@@ -281,7 +281,7 @@ ul{
     }
 
     .logo img{
-        width:75px;
+        width:105px;
     }
 
     .logo-text h1{
@@ -1518,39 +1518,10 @@ right:-45px;
 
 }
 
-/*==========================
+
+/* ==========================
         PRODUCTS
-==========================*/
-
-.products{
-    width:100%;
-    padding:80px 8%;
-    background:#f8f9fc;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:40px;
-    color:#0B4FA2;
-    margin-bottom:12px;
-}
-
-.section-title p{
-    color:#666;
-    font-size:17px;
-}
-
-/*==========================
-      PRODUCT GRID
-==========================*/
-
-/*==========================
-        PRODUCTS
-==========================*/
+========================== */
 
 .products-grid{
     display:grid;
@@ -1562,9 +1533,9 @@ right:-45px;
     background:#fff;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s ease;
     border:1px solid #eee;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s;
 }
 
 .product-card:hover{
@@ -1574,8 +1545,8 @@ right:-45px;
 
 .product-image{
     position:relative;
-    overflow:hidden;
     height:260px;
+    overflow:hidden;
 }
 
 .product-image img{
@@ -1634,16 +1605,10 @@ right:-45px;
     background:#083b79;
 }
 
-/*==========================
-        MODAL
-==========================*/
-.modal-prev{
-    left:15px;
-}
 
-.modal-next{
-    right:15px;
-}
+/* ==========================
+        PRODUCT MODAL
+========================== */
 
 .product-modal{
     position:fixed;
@@ -1667,10 +1632,13 @@ right:-45px;
     height:90vh;
     background:#fff;
     border-radius:18px;
+    overflow:hidden;
     display:grid;
     grid-template-columns:55% 45%;
-    overflow:hidden;
 }
+
+
+/* Close */
 
 .close-btn{
     position:absolute;
@@ -1686,17 +1654,19 @@ right:-45px;
     color:#0B4FA2;
 }
 
-/*==========================
-      LEFT SIDE
-==========================*/
+
+/* ==========================
+        LEFT SIDE
+========================== */
 
 .modal-left{
     padding:25px;
-    position:sticky;
-    top:0;
-    height:90vh;
-    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
     background:#fff;
+    overflow:hidden;
 }
 
 #mainImage{
@@ -1707,11 +1677,11 @@ right:-45px;
 }
 
 .thumbnail-container{
-    margin-top:20px;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:12px;
+    margin-top:20px;
 }
 
 .thumb{
@@ -1719,8 +1689,8 @@ right:-45px;
     height:70px;
     object-fit:cover;
     border-radius:8px;
-    cursor:pointer;
     border:2px solid transparent;
+    cursor:pointer;
     transition:.3s;
 }
 
@@ -1729,13 +1699,15 @@ right:-45px;
     border-color:#0B4FA2;
 }
 
-/*==========================
-      RIGHT SIDE
-==========================*/
+
+/* ==========================
+        RIGHT SIDE
+========================== */
 
 .modal-right{
-    padding:40px;
+    padding:35px;
     overflow-y:auto;
+    scrollbar-width:thin;
 }
 
 .modal-right h2{
@@ -1746,13 +1718,18 @@ right:-45px;
 
 #modalDescription{
     color:#666;
-    line-height:1.9;
     font-size:16px;
+    line-height:1.9;
+    white-space:normal;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 #modalDescription strong{
     display:block;
-    margin:28px 0 12px;
+    margin:8px 0 10px;
     color:#0B4FA2;
     font-size:22px;
     font-weight:700;
@@ -1761,8 +1738,7 @@ right:-45px;
 .spec-table{
     width:100%;
     border-collapse:collapse;
-    margin-top:35px;
-    margin-bottom:30px;
+    margin:30px 0;
 }
 
 .spec-table td{
@@ -1777,9 +1753,9 @@ right:-45px;
 .quote-btn{
     display:inline-block;
     padding:15px 28px;
+    border-radius:8px;
     background:#0B4FA2;
     color:#fff;
-    border-radius:8px;
     text-decoration:none;
     transition:.3s;
 }
@@ -1788,9 +1764,10 @@ right:-45px;
     background:#083b79;
 }
 
-/*==========================
+
+/* ==========================
         SCROLLBAR
-==========================*/
+========================== */
 
 .modal-right::-webkit-scrollbar{
     width:8px;
@@ -1798,16 +1775,17 @@ right:-45px;
 
 .modal-right::-webkit-scrollbar-thumb{
     background:#0B4FA2;
-    border-radius:10px;
+    border-radius:20px;
 }
 
 .modal-right::-webkit-scrollbar-track{
     background:#eee;
 }
 
-/*==========================
-      NAV BUTTONS
-==========================*/
+
+/* ==========================
+      MODAL NAVIGATION
+========================== */
 
 .nav{
     position:absolute;
@@ -1822,13 +1800,14 @@ right:-45px;
     font-size:24px;
     cursor:pointer;
     z-index:50;
+    transition:.3s;
 }
 
-.prev{
+.modal-prev{
     left:18px;
 }
 
-.next{
+.modal-next{
     right:18px;
 }
 
@@ -1842,36 +1821,42 @@ right:-45px;
 
 @media(max-width:992px){
 
-.products-grid{
-    grid-template-columns:repeat(2,1fr);
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .modal-box{
+        width:95%;
+        max-height:95vh;
+        grid-template-columns:1fr;
+        overflow-y:auto;
+    }
+
+    .modal-left{
+        padding:20px;
+    }
+
+    .modal-right{
+        padding:25px;
+        overflow:visible;
+    }
+
+    #mainImage{
+        height:350px;
+    }
+
+    .thumb{
+        width:75px;
+        height:60px;
+    }
+
+    .nav{
+        display:none;
+    }
+
 }
 
-.modal-box{
-    width:95%;
-    height:95vh;
-    grid-template-columns:1fr;
-}
-
-.modal-left{
-    position:relative;
-    height:auto;
-    padding:20px;
-}
-
-.modal-right{
-    padding:25px;
-    overflow:visible;
-}
-
-#mainImage{
-    height:350px;
-}
-
-.nav{
-    display:none;
-}
-
-}
 
 /*==========================
         MOBILE
@@ -1901,32 +1886,25 @@ right:-45px;
 
 .modal-box{
     width:100%;
-    height:95vh;
+    max-height:95vh;
     display:block;
     overflow-y:auto;
 }
 
 .modal-left{
-    position:relative;
-    height:auto;
     padding:18px;
 }
 
 .modal-right{
     padding:20px;
-    overflow:visible;
 }
 
 #mainImage{
-    height:250px;
-}
-
-.thumbnail-container{
-    gap:10px;
+    height:240px;
 }
 
 .thumb{
-    width:70px;
+    width:65px;
     height:55px;
 }
 
@@ -1936,11 +1914,6 @@ right:-45px;
 
 #modalDescription{
     font-size:15px;
-    line-height:1.8;
-}
-
-#modalDescription strong{
-    font-size:19px;
 }
 
 .close-btn{
@@ -3085,6 +3058,23 @@ SERVICES
 
 }
 
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.footer-links ul{
+    list-style:none;
+    padding:0;
+    margin:20px 0 0;
+}
+
+.footer-links li{
+    margin:18px 0;
+}
+
 /*=========================
         Tablet
 ==========================*/
@@ -3137,66 +3127,32 @@ SERVICES
 
 @media(max-width:768px){
 
-.footer{
-
-    padding:60px 20px 25px;
-
-}
-
-.footer-container{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
-    gap:40px;
-
-}
-
-.footer-box h2{
-
-    font-size:30px;
-
+.footer-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .footer-box h3{
-
-    font-size:26px;
-
+    text-align:center;
 }
 
-.footer-box p{
-
-    font-size:17px;
-
+.footer-box ul{
+    list-style:none;
+    padding:0;
+    margin:20px 0 0;
+    width:100%;
+    text-align:center;
 }
 
 .footer-box ul li{
-
-    font-size:17px;
-
+    margin:12px 0;
 }
 
-.footer-social{
-
-    justify-content:center;
-
-}
-
-.footer-social a{
-
-    width:50px;
-
-    height:50px;
-
-    font-size:20px;
-
-}
-
-.footer-bottom{
-
-    font-size:16px;
-
+.footer-box ul li a{
+    display:block;
+    width:100%;
+    text-align:center;
 }
 
 }

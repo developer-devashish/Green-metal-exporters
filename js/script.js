@@ -155,14 +155,20 @@ detailButtons.forEach(button => {
         description = description
 
             // Preserve line breaks
-            .replace(/\n/g, "<br>")
+          .replace(/Available Sizes for Export/g,
+                "<br><strong>Available Sizes for Export</strong>")
 
-            // Headings
-            .replace(/Available Sizes for Export/g, "<br><br><strong>Available Sizes for Export</strong>")
-            .replace(/Available Types/g, "<br><br><strong>Available Types</strong>")
-            .replace(/Length Options/g, "<br><br><strong>Length Options</strong>")
-            .replace(/Grades Available/g, "<br><br><strong>Grades Available</strong>")
-            .replace(/Features/g, "<br><br><strong>Features</strong>");
+            .replace(/Length Options/g,
+                "<br><strong>Length Options</strong>")
+
+            .replace(/Grades Available/g,
+                "<br><strong>Grades Available</strong>")
+
+            .replace(/Available Types/g,
+                "<br><strong>Available Types</strong>")
+
+            .replace(/Features/g,
+                "<br><strong>Features</strong>")
 
         modalDescription.innerHTML = description;
 
