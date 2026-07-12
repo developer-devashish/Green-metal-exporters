@@ -883,6 +883,10 @@ line-height:1.7;
       FOUNDER SECTION
 ==========================*/
 
+/*=====================================================
+                FOUNDER SECTION
+=====================================================*/
+
 .founder-section{
     padding:90px 0;
     background:#fff;
@@ -897,7 +901,9 @@ line-height:1.7;
     align-items:center;
 }
 
-/* Image */
+/*==========================
+        IMAGE
+==========================*/
 
 .founder-image{
     overflow:hidden;
@@ -915,7 +921,9 @@ line-height:1.7;
     transform:scale(1.05);
 }
 
-/* Content */
+/*==========================
+        CONTENT
+==========================*/
 
 .founder-content{
     padding-right:20px;
@@ -929,15 +937,98 @@ line-height:1.7;
     line-height:1.2;
 }
 
+/*=====================================================
+                MESSAGE BOX
+=====================================================*/
+
 .message{
+
+    position:relative;
+
+    background:#fff;
+
+    padding:70px 55px 60px;
+
+    border-radius:35px;
+
+    border:2px solid #edf6ed;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
     font-size:22px;
+
     line-height:1.9;
-    color:#222;
-    margin-bottom:40px;
+
+    color:#333;
+
     text-align:left;
+
+    margin-bottom:45px;
+
+    overflow:hidden;
+
 }
 
-/* Founder Info */
+/* Top Quote */
+
+.message::before{
+    content:"❝";
+    position:absolute;
+    top:18px;
+    left:18px;
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#17863b;
+    font-size:55px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    z-index:2;
+}
+
+/* Bottom Quote */
+
+.message::after{
+
+    content:"❞";
+
+    position:absolute;
+
+    right:28px;
+
+    bottom:8px;
+
+    color:#dbe8d8;
+
+    font-size:82px;
+
+    line-height:1;
+
+}
+
+/* Bottom Border Decoration */
+
+.message{
+    position:relative;
+    background:#fff;
+    padding:70px 40px 60px 95px;   /* Increased left padding */
+    border-radius:35px;
+    border:2px solid #edf6ed;
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+    font-size:22px;
+    line-height:1.9;
+    color:#333;
+    text-align:left;
+    margin-bottom:45px;
+    overflow:hidden;
+}
+
+/*==========================
+      FOUNDER INFO
+==========================*/
 
 .founder-info{
     margin-bottom:35px;
@@ -957,13 +1048,6 @@ line-height:1.7;
     margin-bottom:12px;
 }
 
-.founder-info span{
-    color:#14863b;
-    font-size:20px;
-    font-weight:700;
-    letter-spacing:2px;
-}
-
 .founder-tagline{
     display:block;
     width:320px;
@@ -972,7 +1056,9 @@ line-height:1.7;
     height:auto;
 }
 
-/* Company Card */
+/*==========================
+      COMPANY CARD
+==========================*/
 
 .company-card{
     margin-top:35px;
@@ -1000,9 +1086,9 @@ line-height:1.7;
     color:#333;
 }
 
-/*=========================
-          Tablet
-==========================*/
+/*=====================================================
+                    TABLET
+=====================================================*/
 
 @media(max-width:1100px){
 
@@ -1027,7 +1113,7 @@ line-height:1.7;
 
 .message{
     font-size:20px;
-    text-align:center;
+    text-align:left;
 }
 
 .founder-info h3{
@@ -1040,136 +1126,278 @@ line-height:1.7;
 
 }
 
+
+
+
 /*=========================
           Mobile
 ==========================*/
+
 @media (max-width:768px){
 
     .founder-section{
-        padding:50px 0;
+        padding:50px 15px;
     }
 
     .founder-section .container{
+        width:100%;
+        display:grid;
         grid-template-columns:1fr;
-        gap:25px;
+        gap:30px;
+    }
+
+    .founder-image{
+        max-width:340px;
+        width:100%;
+        margin:auto;
     }
 
     .founder-content{
         width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        padding-right:0;
+        padding:0;
+        display:block;
     }
 
     .founder-content h2{
-        font-size:34px;
+        font-size:36px;
         line-height:1.2;
         text-align:center;
-        margin-bottom:18px;
-        transform: translateX(30px); 
+        margin-bottom:25px;
     }
 
-    .founder-tagline{
-        display:block;
-        width:320px;      /* Adjust as needed */
+    /*=========================
+          MESSAGE BOX
+    =========================*/
+
+    .message{
+
+        width:100%;
+
         max-width:100%;
-        margin:15px auto 0;
-        height:auto;
+
+        box-sizing:border-box;
+
+        position:relative;
+
+        margin:0 auto 25px;
+
+        padding:55px 24px 40px;
+
+        font-size:15px;
+
+        line-height:1.6;
+
+        text-align:left;
+
+        border-radius:28px;
+
+        background:#fff;
+
+        border:2px solid #edf6ed;
+
+        box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    }
+
+    .message::before{
+
+        content:"❝";
+
+        position:absolute;
+
+        top:15px;
+
+        left:15px;
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:50%;
+
+        background:#fff;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+        color:#16863a;
+
+        font-size:34px;
+
+        box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    }
+
+    .message::after{
+
+        content:"❞";
+
+        position:absolute;
+
+        right:18px;
+
+        bottom:10px;
+
+        font-size:48px;
+
+        color:#dce8d8;
+
     }
 
     .message{
-        width:95%;
-        margin:0 auto 25px;
-        font-size:17px;
-        line-height:1.6;
+        background-image:
+        linear-gradient(#27a844,#27a844),
+        linear-gradient(#27a844,#27a844);
+
+        background-repeat:no-repeat;
+
+        background-size:2px 55px,80px 2px;
+
+        background-position:
+        right 18px bottom 18px,
+        right 18px bottom 18px;
+    }
+
+    /*=========================
+        Founder Info
+    =========================*/
+
+    .founder-info{
+        width:100%;
         text-align:center;
-        position:relative;
-        left: 30px;
+        margin-top:15px;
+    }
+
+    .founder-info h3{
+        font-size:24px;
+        margin-bottom:8px;
+    }
+
+    .founder-info h4{
+        font-size:18px;
+        margin-bottom:12px;
+    }
+
+    .founder-tagline{
+        width:190px;
+        display:block;
+        margin:auto;
+    }
+
+    /*=========================
+          Company Card
+    =========================*/
+
+    .company-card{
+
+        width:100%;
+
+        box-sizing:border-box;
+
+        margin-top:25px;
+
+        padding:22px;
+
+        border-radius:20px;
+
+    }
+
+    .company-card h3{
+        font-size:24px;
+    }
+
+    .company-card h4{
+        font-size:18px;
+    }
+
+    .company-card p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+}
+
+/*=====================================================
+                SMALL MOBILE
+=====================================================*/
+
+@media(max-width:480px){
+
+    .founder-section{
+        padding:45px 15px;
+    }
+
+    .founder-section .container{
+        width:100%;
+        gap:20px;
+    }
+
+    .founder-image{
+        width:100%;
+        max-width:320px;
+        margin:auto;
+    }
+
+    .founder-content{
+        width:100%;
+        padding:0;
+    }
+
+    .founder-content h2{
+        font-size:28px;
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .message{
+        width:100%;
+        padding:55px 22px 40px;
+        font-size:15px;
+        line-height:1.65;
+        border-radius:25px;
+        margin-bottom:25px;
+    }
+
+    .message::before{
+        width:46px;
+        height:46px;
+        left:15px;
+        top:15px;
+        font-size:32px;
+    }
+
+    .message::after{
+        font-size:46px;
+        right:15px;
+        bottom:12px;
     }
 
     .founder-info{
         text-align:center;
-        transform: translateX(30px); 
+    }
+
+    .founder-info h3{
+        font-size:22px;
+    }
+
+    .founder-info h4{
+        font-size:16px;
+    }
+
+    .founder-tagline{
+        width:180px;
+        margin:15px auto 0;
     }
 
     .company-card{
-        width:95%;
-        margin:20px auto 0;
-        transform: translateX(30px); 
+        width:100%;
+        padding:20px;
     }
 
 }
-
-/*=========================
-       Small Mobile
-==========================*/
-
-@media(max-width:480px){
-
-.founder-section{
-    padding:50px 0;
-}
-
-.founder-section .container{
-    width:92%;
-}
-
-.founder-content{
-    padding-right:85px;   /* keeps text away from icons */
-}
-
-.founder-content h2{
-    font-size:28px;
-    margin-bottom:18px;
-}
-
-.message{
-    font-size:16px;
-    line-height:1.3;
-    width:80%;
-}
-
-.founder-info h3{
-    font-size:18px;
-}
-
-.founder-info h4{
-    font-size:15px;
-}
-
-.founder-tagline{
-    display:block;
-    width:320px;      /* Adjust as needed */
-    max-width:100%;
-    margin:15px auto 0;
-    height:auto;
-}
-
-.founder-info span{
-    font-size:14px;
-}
-
-.company-card{
-    padding:18px;
-}
-
-.company-card h3{
-    font-size:20px;
-}
-
-.company-card h4{
-    font-size:15px;
-}
-
-.company-card p{
-    font-size:14px;
-}
-
-}
-
-
-
 /*==========================
 Vision Section
 ==========================*/
