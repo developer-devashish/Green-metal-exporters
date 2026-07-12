@@ -128,10 +128,14 @@ iframe{
 /* =========================
       NAVIGATION
 ========================= */
+/* =========================
+      NAVBAR
+========================= */
 
 .navbar{
     display:flex;
     align-items:center;
+    margin-left:auto;
 }
 
 .nav-links{
@@ -148,8 +152,8 @@ iframe{
 .nav-links a{
     color:#123d8d;
     font-weight:600;
-    transition:.3s;
     text-decoration:none;
+    transition:.3s;
 }
 
 .nav-links a:hover{
@@ -157,31 +161,75 @@ iframe{
 }
 
 /* =========================
+      LOGO
+========================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:120px;
+    height:auto;
+}
+
+.logo-text{
+    display:flex;
+    align-items:center;
+}
+
+.logo-text h1{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:0;
+    white-space:nowrap;
+    line-height:1;
+    font-size:2.4rem;
+    font-weight:700;
+}
+
+.greens{
+    color:#139548;
+}
+
+.grays{
+    color:#555;
+}
+
+/* =========================
       DESKTOP BUTTON
 ========================= */
 
 .quote-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:#139548;
     color:#fff;
     padding:14px 30px;
     border-radius:40px;
-    font-weight:600;
     text-decoration:none;
-    transition:.3s;
+    font-weight:600;
+    white-space:nowrap;
+    margin-left:30px;   /* Increase gap from Contact */
+    flex-shrink:0;
+    transition:.3s ease;
 }
 
 .quote-btn:hover{
     background:#0d7d39;
 }
 
-/* Hide mobile quote on desktop */
-
 .mobile-quote{
     display:none;
 }
 
 /* =========================
-      MOBILE QUOTE BUTTON
+      MOBILE BUTTON
 ========================= */
 
 .quote-mobile-btn{
@@ -192,70 +240,47 @@ iframe{
     color:#fff !important;
     padding:14px;
     border-radius:8px;
-    font-weight:600;
     text-decoration:none;
-    transition:.3s;
-}
-
-.quote-mobile-btn:hover{
-    background:#0d7d39;
+    font-weight:600;
 }
 
 /* =========================
-      MENU BUTTON
+      HAMBURGER
 ========================= */
 
 .menu-toggle{
-
-    width:48px;
-    height:48px;
-
-    border:2px solid #163d84;
-    border-radius:6px;
-
     display:none;
-
-    grid-template-columns:repeat(2,1fr);
-    grid-template-rows:repeat(2,1fr);
-
-    gap:6px;
-
-    padding:8px;
-
+    flex-direction:column;
+    justify-content:space-between;
+    width:30px;
+    height:22px;
     cursor:pointer;
-
-    background:#fff;
-
-    transition:.3s;
-
+    z-index:1002;
 }
 
 .menu-toggle span{
-
-    width:8px;
-    height:8px;
-
-    background:#163d84;
-
+    display:block;
+    width:100%;
+    height:3px;
+    background:#123d8d;
     border-radius:2px;
-
-    justify-self:center;
-    align-self:center;
-
     transition:.3s;
-
 }
 
-.menu-toggle:hover{
-    background:#163d84;
+.menu-toggle.active span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
 }
 
-.menu-toggle:hover span{
-    background:#fff;
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
 }
 
 /* =========================
-        TABLET
+      TABLET
 ========================= */
 
 @media(max-width:992px){
@@ -265,11 +290,11 @@ iframe{
 }
 
 .logo-text h1{
-    font-size:1.5rem;
+    font-size:1.7rem;
 }
 
 .nav-links{
-    gap:20px;
+    gap:22px;
 }
 
 .quote-btn{
@@ -278,133 +303,118 @@ iframe{
 
 }
 
-
-
 /* =========================
-        MOBILE
+      MOBILE
 ========================= */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
-    .container{
-        padding:15px;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-    }
-
-    /* Logo */
-
-    .logo{
-        flex:1;
-    }
-
-    .logo img{
-        width:105px;
-    }
-
-    .logo-text h1{
-        font-size:1.8rem;
-        line-height:1.2;
-    }
-
-    .logo-text p{
-        font-size:.75rem;
-    }
-
-    /* Hide Desktop Quote Button */
-
-    .quote-btn{
-        display:none !important;
-    }
-
-    /* Show Menu Button */
-
-    .menu-toggle{
-        display:grid;
-        flex-shrink:0;
-        margin-left:auto;
-        z-index:1002;
-    }
-
-    /* Mobile Navigation */
-
-    .navbar{
-        position:absolute;
-        top:100%;
-        left:0;
-        width:100%;
-        background:#fff;
-
-        max-height:0;
-        overflow:hidden;
-
-        transition:max-height .4s ease;
-
-        box-shadow:0 8px 15px rgba(0,0,0,.08);
-    }
-
-    .navbar.active{
-        max-height:500px;
-    }
-
-    /* Vertical Menu */
-
-    .nav-links{
-        display:flex;
-        flex-direction:column;
-        width:100%;
-        gap:0;
-    }
-
-    .nav-links li{
-        width:100%;
-        border-bottom:1px solid #eee;
-    }
-
-    .nav-links li:last-child{
-        border-bottom:none;
-    }
-
-    .nav-links a{
-        display:block;
-        width:100%;
-        padding:18px 22px;
-        color:#123d8d;
-        font-weight:600;
-    }
-
-    .nav-links a:hover{
-        background:#f5f5f5;
-        color:#139548;
-    }
-
-    /* Mobile Get Quote */
-
-    .mobile-quote{
-        display:block;
-        padding:20px;
-        width:100%;
-    }
-
-    .quote-mobile-btn{
-        display:block;
-        width:100%;
-        text-align:center;
-        padding:14px;
-        background:#123d8d;
-        color:#fff !important;
-        border-radius:8px;
-        font-weight:600;
-        transition:.3s;
-    }
-
-    .quote-mobile-btn:hover{
-        background:#0d7d39;
-    }
-
+.container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
 }
 
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex:1;
+    min-width:0;
+}
+
+.logo img{
+    width:60px;
+    height:auto;
+}
+
+.logo-text{
+    flex:1;
+    min-width:0;
+}
+
+.logo-text h1{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    margin:0;
+    white-space:nowrap;
+    font-size:1rem;
+    line-height:1;
+}
+
+/* Hide Desktop Button */
+
+.quote-btn{
+    display:none !important;
+}
+
+/* Hamburger */
+
+.menu-toggle{
+    display:flex;
+    margin-left:auto;
+}
+
+/* Mobile Navbar */
+
+.navbar{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#fff;
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+    box-shadow:0 8px 15px rgba(0,0,0,.08);
+}
+
+.navbar.active{
+    max-height:500px;
+}
+
+/* Vertical Menu */
+
+.nav-links{
+    flex-direction:column;
+    gap:0;
+    width:100%;
+}
+
+.nav-links li{
+    width:100%;
+    border-bottom:1px solid #eee;
+}
+
+.nav-links li:last-child{
+    border-bottom:none;
+}
+
+.nav-links a{
+    display:block;
+    width:100%;
+    padding:18px 22px;
+}
+
+.mobile-quote{
+    display:block;
+    width:100%;
+    padding:20px;
+}
+
+.quote-mobile-btn{
+    background:#123d8d;
+    color:#fff !important;
+}
+
+}
 
 
 /* ========================= 
@@ -954,6 +964,14 @@ line-height:1.7;
     letter-spacing:2px;
 }
 
+.founder-tagline{
+    display:block;
+    width:320px;
+    max-width:100%;
+    margin:10px 0 0;
+    height:auto;
+}
+
 /* Company Card */
 
 .company-card{
@@ -1027,45 +1045,61 @@ line-height:1.7;
 ==========================*/
 @media (max-width:768px){
 
-.founder-content{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    .founder-section{
+        padding:50px 0;
+    }
+
+    .founder-section .container{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .founder-content{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        padding-right:0;
+    }
+
+    .founder-content h2{
+        font-size:34px;
+        line-height:1.2;
+        text-align:center;
+        margin-bottom:18px;
+        transform: translateX(30px); 
+    }
+
+    .founder-tagline{
+        display:block;
+        width:320px;      /* Adjust as needed */
+        max-width:100%;
+        margin:15px auto 0;
+        height:auto;
+    }
+
+    .message{
+        width:95%;
+        margin:0 auto 25px;
+        font-size:17px;
+        line-height:1.6;
+        text-align:center;
+        position:relative;
+        left: 30px;
+    }
+
+    .founder-info{
+        text-align:center;
+        transform: translateX(30px); 
+    }
+
+    .company-card{
+        width:95%;
+        margin:20px auto 0;
+        transform: translateX(30px); 
+    }
+
 }
-
-.founder-content h2{
-    font-size:34px;
-    line-height:1.2;
-    text-align:center;
-    transform:translateX(39px);
-}
-
-.message{
-    width:70%;
-    margin:0 auto 30px;
-    margin-left:70px;   /* Increase this value as needed */
-    text-align:center;
-    line-height:1.9;
-    font-size:17px;
-}
-
-.founder-info{
-    transform:translateX(39px);
-    text-align:center;
-}
-
-
-.company-card{
-    width:82%;
-    margin:25px auto 0;
-    transform:translateX(39px);
-}
-
-
-
-}
-
 
 /*=========================
        Small Mobile
@@ -1092,7 +1126,7 @@ line-height:1.7;
 
 .message{
     font-size:16px;
-    line-height:1.8;
+    line-height:1.3;
     width:80%;
 }
 
@@ -1102,6 +1136,14 @@ line-height:1.7;
 
 .founder-info h4{
     font-size:15px;
+}
+
+.founder-tagline{
+    display:block;
+    width:320px;      /* Adjust as needed */
+    max-width:100%;
+    margin:15px auto 0;
+    height:auto;
 }
 
 .founder-info span{
@@ -1126,389 +1168,284 @@ line-height:1.7;
 
 }
 
+
+
 /*==========================
-VISION SECTION
-===========================*/
+Vision Section
+==========================*/
 
 .vision-section{
-
     padding:90px 5%;
     background:#ffffff;
-
 }
 
 .vision-container{
-
     max-width:1400px;
     margin:auto;
-
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:35px;
-
 }
 
-/* Cards */
+/*==========================
+Cards
+==========================*/
 
 .vision-card{
-
     background:#fff;
     position:relative;
     overflow:hidden;
-
     padding:40px;
-
     border-radius:28px;
-
     box-shadow:0 18px 45px rgba(0,0,0,.10);
-
     transition:.45s;
-
 }
 
 .vision-card:hover{
-
     transform:translateY(-12px);
-
     box-shadow:0 25px 55px rgba(0,0,0,.18);
-
 }
 
-/* Top Borders */
+/*==========================
+Top Border Colors
+==========================*/
 
 .blue{
-
     border-top:6px solid #143b82;
-
 }
 
 .green{
-
     border-top:6px solid #14863b;
-
 }
 
 .orange{
-
     border-top:6px solid #f2a000;
-
 }
 
-/* Decorative Circle */
+/*==========================
+Decorative Circle
+==========================*/
 
 .circle{
-
     width:170px;
     height:170px;
-
     position:absolute;
-
     top:-70px;
     right:-70px;
-
     background:#e9f5ea;
-
     border-radius:50%;
-
 }
 
-/* Icon */
+/*==========================
+Icons
+==========================*/
 
 .icon{
-
     width:95px;
     height:95px;
-
     background:#143b82;
-
     border-radius:50%;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-size:45px;
-
     margin-bottom:30px;
-
     position:relative;
     z-index:2;
-
 }
 
-/* Headings */
+/*==========================
+Headings
+==========================*/
 
 .vision-card h2{
-
     font-size:48px;
-
     color:#143b82;
-
     margin-bottom:25px;
-
     line-height:1.2;
-
 }
 
-/* Paragraph */
+/*==========================
+Paragraph
+==========================*/
 
 .vision-card p{
-
     font-size:22px;
-
     line-height:2;
-
     color:#222;
-
 }
 
-/* List */
+/*==========================
+Lists
+==========================*/
 
 .vision-card ul{
-
     list-style:none;
-
+    padding:0;
+    margin:0;
 }
 
 .vision-card li{
-
     position:relative;
-
-    padding-left:34px;
-
-    margin-bottom:24px;
-
+    padding-left:30px;
+    margin-bottom:20px;
     font-size:21px;
-
-    line-height:1.7;
-
+    line-height:1.8;
+    color:#222;
 }
 
 /* Green Bullet */
 
 .vision-card li::before{
-
-    content:"";
-
-    width:16px;
-    height:16px;
-
-    /* background:#1a9a44; */
-
-    border-radius:4px;
-
+    content:"•";
     position:absolute;
-
     left:0;
-    top:12px;
-
+    top:0;
+    color:#14863b;
+    font-size:28px;
+    font-weight:bold;
+    line-height:1;
 }
 
 /*==========================
 Emoji Animations
-===========================*/
+==========================*/
 
 .earth{
-
     animation:rotateEarth 8s linear infinite;
-
 }
 
 .target{
-
     animation:pulseTarget 2s infinite;
-
 }
 
 .star{
-
     animation:twinkle 1.5s infinite;
-
 }
 
 @keyframes rotateEarth{
-
     from{
-
         transform:rotate(0deg);
-
     }
-
     to{
-
         transform:rotate(360deg);
-
     }
-
 }
 
 @keyframes pulseTarget{
-
     0%{
-
         transform:scale(1);
-
     }
-
     50%{
-
         transform:scale(1.15);
-
     }
-
     100%{
-
         transform:scale(1);
-
     }
-
 }
 
 @keyframes twinkle{
-
     0%,100%{
-
         transform:scale(1);
-
     }
-
     50%{
-
         transform:scale(1.25);
-
     }
-
 }
 
 /*==========================
 Tablet
-===========================*/
+==========================*/
 
 @media(max-width:1200px){
 
-.vision-container{
-
-grid-template-columns:repeat(2,1fr);
-
-}
+    .vision-container{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
 @media(max-width:900px){
 
-.vision-container{
+    .vision-container{
+        grid-template-columns:1fr;
+    }
 
-grid-template-columns:1fr;
+    .vision-card{
+        padding:35px;
+    }
 
-}
+    .vision-card h2{
+        font-size:36px;
+    }
 
-.vision-card{
+    .vision-card p{
+        font-size:18px;
+        line-height:1.8;
+    }
 
-padding:35px;
+    .vision-card li{
+        font-size:18px;
+        line-height:1.7;
+        padding-left:28px;
+    }
 
-}
-
-.vision-card h2{
-
-font-size:36px;
-
-}
-
-.vision-card p{
-
-font-size:18px;
-
-}
-
-.vision-card li{
-
-font-size:18px;
-
-}
+    .vision-card li::before{
+        font-size:24px;
+    }
 
 }
 
 /*==========================
 Mobile
-===========================*/
+==========================*/
 
 @media(max-width:600px){
 
-.vision-section{
+    .vision-section{
+        padding:60px 15px;
+    }
 
-padding:60px 15px;
+    .vision-card{
+        padding:28px;
+        border-radius:20px;
+    }
 
-}
+    .icon{
+        width:75px;
+        height:75px;
+        font-size:34px;
+    }
 
-.vision-card{
+    .vision-card h2{
+        font-size:28px;
+        margin-bottom:18px;
+    }
 
-padding:28px;
+    .vision-card p{
+        font-size:16px;
+        line-height:1.8;
+    }
 
-border-radius:20px;
+    .vision-card li{
+        font-size:16px;
+        padding-left:24px;
+        margin-bottom:14px;
+        line-height:1.7;
+    }
 
-}
+    .vision-card li::before{
+        font-size:20px;
+    }
 
-.icon{
-
-width:75px;
-
-height:75px;
-
-font-size:34px;
-
-}
-
-.vision-card h2{
-
-font-size:28px;
-
-margin-bottom:18px;
-
-}
-
-.vision-card p{
-
-font-size:16px;
-
-line-height:1.8;
-
-}
-
-.vision-card li{
-
-font-size:16px;
-
-padding-left:28px;
-
-margin-bottom:16px;
+    .circle{
+        width:120px;
+        height:120px;
+        top:-45px;
+        right:-45px;
+    }
 
 }
-
-.vision-card li::before{
-
-width:12px;
-
-height:12px;
-
-top:8px;
-
-}
-
-.circle{
-
-width:120px;
-
-height:120px;
-
-top:-45px;
-
-right:-45px;
-
-}
-
-}
-
-
 /* ==========================
         PRODUCTS
 ========================== */
@@ -2047,14 +1984,19 @@ EXPORT MARKET
     font-weight:700;
 }
 
+/*==============================
+DESKTOP
+===============================*/
+
 .market-container{
-    max-width:900px;
+    width:100%;
+    max-width:1100px;
     margin:auto;
     background:#fff;
     padding:45px;
     border-radius:30px;
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr); /* 4 columns */
     gap:25px;
     box-shadow:0 12px 35px rgba(0,0,0,.08);
 }
@@ -2083,9 +2025,12 @@ EXPORT MARKET
     color:#1d3557;
     font-weight:600;
     transition:.3s;
+    line-height:1.3;
 }
 
-/* Hover */
+/*==============================
+HOVER
+===============================*/
 
 .market-card:hover{
     background:#0056b3;
@@ -2107,10 +2052,15 @@ TABLET
 
 @media (max-width:991px){
 
+    .export-market{
+        padding:60px 5%;
+    }
+
     .market-container{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:repeat(4,1fr);
         gap:15px;
         padding:25px;
+        max-width:100%;
     }
 
     .market-card{
@@ -2123,7 +2073,7 @@ TABLET
     }
 
     .market-card h3{
-        font-size:15px;
+        font-size:14px;
     }
 
 }
@@ -2138,26 +2088,34 @@ MOBILE
         padding:50px 4%;
     }
 
+    .section-title{
+        margin-bottom:35px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
     .market-container{
-        grid-template-columns:repeat(3,1fr);   /* 3 cards per row */
-        gap:12px;
+        grid-template-columns:repeat(4,1fr); /* 4 columns */
+        gap:10px;
         padding:15px;
         border-radius:20px;
     }
 
     .market-card{
-        padding:15px 8px;
+        padding:12px 6px;
         border-radius:15px;
     }
 
     .market-card img{
-        width:30px;
-        height:30px;
+        width:28px;
+        height:28px;
         margin-bottom:8px;
     }
 
     .market-card h3{
-        font-size:12px;
+        font-size:11px;
         line-height:1.3;
     }
 
@@ -2169,28 +2127,34 @@ SMALL MOBILE
 
 @media (max-width:480px){
 
+    .export-market{
+        padding:40px 4%;
+    }
+
     .market-container{
-        grid-template-columns:repeat(3,1fr);   /* Still 3 cards */
-        gap:10px;
+        grid-template-columns:repeat(4,1fr); /* 4 columns */
+        gap:8px;
         padding:12px;
+        border-radius:18px;
     }
 
     .market-card{
-        padding:12px 6px;
+        padding:10px 5px;
+        border-radius:12px;
     }
 
     .market-card img{
-        width:26px;
-        height:26px;
+        width:24px;
+        height:24px;
+        margin-bottom:6px;
     }
 
     .market-card h3{
-        font-size:11px;
+        font-size:10px;
+        line-height:1.2;
     }
 
 }
-
-
 
 
 
@@ -3355,6 +3319,12 @@ SERVICES
 .phone{
 
     background:#FF8200;
+
+}
+
+.linkedin{
+
+    background:#0077B5;
 
 }
 

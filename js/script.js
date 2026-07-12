@@ -7,18 +7,15 @@ const navbar = document.querySelector(".navbar");
 
 menu.addEventListener("click", () => {
     navbar.classList.toggle("active");
+    menu.classList.toggle("active"); // Animate hamburger
 });
 
 /* Close menu after clicking any link */
-
 document.querySelectorAll(".nav-links a").forEach(link => {
-
     link.addEventListener("click", () => {
-
         navbar.classList.remove("active");
-
+        menu.classList.remove("active"); // Reset hamburger
     });
-
 });
 
 
