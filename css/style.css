@@ -1252,6 +1252,7 @@ line-height:1.7;
 .company-card h3{
     font-size:20px;
     margin-bottom:15px;
+    margin-left: 20px; 
 }
 
 .company-card p{
