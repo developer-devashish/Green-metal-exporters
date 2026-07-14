@@ -895,75 +895,62 @@ line-height:1.7;
     align-items:center;
 }
 
-/*==========================
-        IMAGE
-==========================*/
 
-/*==========================
-      FOUNDER INFO
-==========================*/
-
-.founder-info{
-    width:100%;
-    padding-left:40px;          /* Align with message text */
-    margin-top:15px;
-    margin-bottom:35px;
-    box-sizing:border-box;
-}
-
-.founder-info h3{
-    font-size:58px;
-    color:#153E8B;
-    font-weight:700;
-    line-height:1.15;
-    margin:0 0 12px;
-}
-
-.founder-info h4{
-    font-size:28px;
-    color:#222;
-    font-weight:500;
-    margin:0 0 18px;
-    line-height:1.3;
-}
-
-.founder-tagline{
-    display:block;
-    width:260px;
-    height:auto;
-    margin:0;
-}
-
-
-/*==========================
-      COMPANY CARD
-==========================*/
+/*=========================
+      Company Card
+=========================*/
 
 .company-card{
+    width:100%;
+    box-sizing:border-box;
     margin-top:35px;
-    background:#fff;
-    border-left:6px solid #14863b;
-    border-radius:24px;
-    padding:35px 40px;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    padding:20px 10px 35px;
+    text-align:center;
+
+    border-bottom:1px solid #e5e5e5;   /* Divider */
 }
 
 .company-card h3{
-    color:#153E8B;
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.company-card h4{
-    font-size:22px;
-    margin-bottom:12px;
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:18px;
 }
 
 .company-card p{
-    font-size:20px;
-    color:#333;
+    font-size:16px;
     line-height:1.8;
+    margin-top:18px;
 }
+
+/*=========================
+      Founder Info
+=========================*/
+
+.founder-info{
+    width:100%;
+    text-align:center;
+    margin-top:35px;
+    padding-top:10px;
+}
+
+.founder-info h3{
+    font-size:25px;
+    line-height:1.35;
+    margin-bottom:12px;
+}
+
+.founder-info h4{
+    font-size:18px;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.founder-tagline{
+    width:190px;
+    display:block;
+    margin:0 auto;
+}
+
 
 /*=====================================================
                     TABLET
@@ -1254,29 +1241,48 @@ line-height:1.7;
         bottom:12px;
     }
 
-    .founder-info{
-        text-align:center;
-    }
-
-    .founder-info h3{
-        font-size:22px;
-    }
-
-    .founder-info h4{
-        font-size:16px;
-    }
-
-    .founder-tagline{
-        width:180px;
-        margin:15px auto 0;
-    }
-
     .company-card{
-        width:100%;
-        padding:20px;
-    }
+    width:100%;
+    padding:15px 5px 30px;
+    margin-top:30px;
+
+    border-bottom:1px solid #e8e8e8;
+}
+
+.company-card h3{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.company-card p{
+    font-size:15px;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+.founder-info{
+    margin-top:30px;
+    padding-top:8px;
+}
+
+.founder-info h3{
+    font-size:23px;
+    line-height:1.35;
+}
+
+.founder-info h4{
+    font-size:17px;
+    margin:10px 0 18px;
+}
+
+.founder-tagline{
+    width:170px;
+    margin:0 auto;
+}
 
 }
+
+
 /*==========================
 Vision Section
 ==========================*/
@@ -1393,26 +1399,24 @@ Lists
 }
 
 .vision-card li{
-    position:relative;
-    padding-left:30px;
-    margin-bottom:20px;
-    font-size:21px;
-    line-height:1.8;
-    color:#222;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.8;
+    color: #222;
 }
-
-/* Green Bullet */
 
 .vision-card li::before{
-    content:"•";
-    position:absolute;
-    left:0;
-    top:0;
-    color:#14863b;
-    font-size:28px;
-    font-weight:bold;
-    line-height:1;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 8px;
+    height: 8px;
+    background: #14863b;
 }
+
 
 /*==========================
 Emoji Animations
@@ -1553,6 +1557,8 @@ Mobile
     }
 
 }
+
+
 /* ==========================
         PRODUCTS
 ========================== */
@@ -3000,9 +3006,6 @@ SERVICES
 }
 
 
-/*=========================
-        FOOTER
-==========================*/
 
 /*==============================
           FOOTER
@@ -3010,7 +3013,7 @@ SERVICES
 
 .footer{
     position:relative;
-    background:#071c49;
+    background:#0f3fa6;
     color:#fff;
     padding:70px 7% 30px;
     overflow:hidden;
