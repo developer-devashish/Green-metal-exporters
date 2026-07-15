@@ -75,6 +75,13 @@ iframe{
         LOGO
 ========================= */
 
+.company-logo img {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    height: auto;
+    display: block;
+}
+
 .logo{
     display:flex;
     align-items:center;
@@ -280,6 +287,13 @@ iframe{
 
 @media(max-width:992px){
 
+    .company-logo img {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    height: auto;
+    display: block;
+}
+
 .logo img{
     width:90px;
 }
@@ -302,7 +316,14 @@ iframe{
       MOBILE
 ========================= */
 
-    @media (max-width:768px){
+@media (max-width:768px){
+
+.company-logo img {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    height: auto;
+    display: block;
+}
 
 .container{
     display:flex;
