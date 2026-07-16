@@ -1273,13 +1273,14 @@ line-height:1.7;
 .company-card h3{
     font-size:20px;
     margin-bottom:15px;
-    margin-left: 20px; 
+    margin-left: 40px; 
 }
 
 .company-card p{
     font-size:15px;
     line-height:1.8;
     margin-top:15px;
+    margin-left: 30px;
 }
 
 .founder-info{
@@ -3267,6 +3268,7 @@ SERVICES
     gap:22px;
     padding:18px 0;
     border-bottom:1px solid rgba(255,255,255,.12);
+    font-size: 10px;
 }
 
 .contact-item:last-child{
@@ -3437,6 +3439,7 @@ SERVICES
 
     .contact-item{
         align-items:flex-start;
+        font-size: 1px;
     }
 
     .contact-icon{
@@ -3459,6 +3462,84 @@ SERVICES
     }
 
 }
+
+@media (max-width:480px){
+
+    .footer{
+        padding:50px 15px 20px;
+    }
+
+    .footer-logo{
+        width:55px;
+    }
+
+    .footer-brand h2{
+        font-size:28px;
+    }
+
+    .footer-line{
+        width:55px;
+    }
+
+    .footer-brand p{
+        font-size:16px;
+    }
+
+    .footer-social a{
+        width:48px;
+        height:48px;
+        font-size:18px;
+    }
+
+    .footer-card{
+        padding:20px;
+        border-radius:18px;
+    }
+
+    .title-icon{
+        width:48px;
+        height:48px;
+        font-size:18px;
+    }
+
+    .card-title h3{
+        font-size:22px;
+    }
+
+    .quick-links a{
+        font-size:16px;
+    }
+
+    .contact-card{
+        width:100%;
+        padding:20px;
+    }
+
+    .contact-item{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        padding:14px 0;
+    }
+
+    .contact-icon{
+        width:48px;
+        height:48px;
+        min-width:48px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .contact-item span{
+        flex:1;
+        font-size:14px;
+        line-height:1.5;
+        word-break:break-word;
+        overflow-wrap:anywhere;
+    }
+}
+
 
 /*=========================
     FLOATING SOCIAL ICONS
@@ -3610,24 +3691,34 @@ SERVICES
       Small Phones
 =========================*/
 
-@media(max-width:480px){
+@media (max-width:480px){
 
-.floating-icons{
+    .floating-icons{
+        position: fixed;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
 
-    right:10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        z-index: 9999;
+    }
 
-    gap:10px;
+    .floating-icons a{
+        width: 48px;
+        height: 48px;
 
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.floating-icons a{
-
-    width:48px;
-
-    height:48px;
-
-    font-size:20px;
-
-}
-
+        margin: 0;
+        padding: 0;
+        transform: none;
+        position: static;
+        flex-shrink: 0;
+    }
 }
