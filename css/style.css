@@ -578,7 +578,7 @@ iframe{
 
 
     .company-logo{
-        transform: translateX(-85px);        
+        transform: translateX(-45px);        
         display: flex;
         align-items: left;
         justify-content: flex-start;
