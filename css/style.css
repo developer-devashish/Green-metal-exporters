@@ -450,7 +450,7 @@ iframe{
 @media (max-width:768px){
 
     .company-logo{
-        transform: translateX(-160px);        
+        transform: translateX(-250px);        
         display: flex;
         align-items: left;
         justify-content: flex-start;
