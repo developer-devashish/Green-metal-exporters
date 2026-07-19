@@ -902,6 +902,45 @@ line-height:1.7;
                 FOUNDER SECTION
 =====================================================*/
 
+/*=====================================================
+                THEME COLORS
+=====================================================*/
+
+:root{
+    --primary:#1B5E20;
+    --secondary:#2E7D32;
+    --accent:#4CAF50;
+    --dark:#222;
+    --gray:#555;
+    --light:#f8f9fa;
+    --border:#dfe8df;
+}
+
+
+/*=====================================================
+                FOUNDER SECTION
+=====================================================*/
+
+.founder-image{
+    width:420px;
+    height:420px;
+    margin:auto;
+    border-radius:50%;
+    overflow:hidden;
+    border:8px solid;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    position:relative;
+}
+
+.founder-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top; /* Adjust if needed */
+    display:block;
+}
+
+
 .founder-section{
     padding:90px 0;
     background:#fff;
@@ -916,60 +955,98 @@ line-height:1.7;
     align-items:center;
 }
 
+.founder-content{
+    background:#fff;
+    padding:40px 45px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    border-left:6px solid var(--secondary);
+}
 
-/*=========================
-      Company Card
-=========================*/
+.founder-content h2{
+    font-size:42px;
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:25px;
+    position:relative;
+}
+
+.founder-content h2::after{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    background:linear-gradient(90deg,var(--secondary),var(--accent));
+    border-radius:30px;
+    margin-top:12px;
+}
+
+.message{
+    color:var(--gray);
+    font-size:18px;
+    line-height:1.9;
+    text-align:justify;
+}
+
+
+
+
+/*=====================================================
+                    COMPANY CARD
+=====================================================*/
 
 .company-card{
     width:100%;
     box-sizing:border-box;
-    margin-top:35px;
-    padding:20px 10px 35px;
+    margin-top:45px;
+    padding:30px 15px;
     text-align:center;
-
-    border-bottom:1px solid #e5e5e5;   /* Divider */
+    border-top:1px solid var(--border);
 }
 
 .company-card h3{
-    font-size:28px;
-    line-height:1.3;
+    font-size:36px;
+    color:var(--primary);
     margin-bottom:18px;
+    font-weight:700;
 }
 
 .company-card p{
-    font-size:16px;
+    font-size:18px;
+    color:var(--gray);
     line-height:1.8;
-    margin-top:18px;
+    margin-top:20px;
 }
 
-/*=========================
-      Founder Info
-=========================*/
+
+/*=====================================================
+                    FOUNDER INFO
+=====================================================*/
 
 .founder-info{
     width:100%;
     text-align:center;
-    margin-top:35px;
-    padding-top:10px;
+    margin-top:45px;
 }
 
 .founder-info h3{
-    font-size:25px;
-    line-height:1.35;
-    margin-bottom:12px;
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:10px;
+    font-weight:700;
 }
 
 .founder-info h4{
-    font-size:18px;
-    line-height:1.5;
-    margin-bottom:18px;
+    font-size:22px;
+    color:var(--dark);
+    margin-bottom:20px;
+    font-weight:600;
 }
 
 .founder-tagline{
-    width:190px;
+    width:210px;
     display:block;
-    margin:0 auto;
+    margin:auto;
 }
 
 
@@ -978,6 +1055,11 @@ line-height:1.7;
 =====================================================*/
 
 @media(max-width:1100px){
+
+    .founder-image{
+    width:360px;
+    height:360px;
+}
 
 .founder-section .container{
     grid-template-columns:1fr;
@@ -991,15 +1073,19 @@ line-height:1.7;
 }
 
 .founder-content{
-    padding-right:0;
+    padding:40px;
 }
 
 .founder-content h2{
-    font-size:48px;
+    font-size:40px;
+}
+
+.founder-content h2::after{
+    margin:12px auto 0;
 }
 
 .message{
-    font-size:20px;
+    font-size:18px;
     text-align:left;
 }
 
@@ -1008,204 +1094,170 @@ line-height:1.7;
 }
 
 .company-card{
+    text-align:center;
+}
+
+}
+
+
+/*=====================================================
+                    MOBILE
+=====================================================*/
+
+@media(max-width:768px){
+
+.founder-image{
+    width:280px;
+    height:280px;
+}
+
+.founder-section{
+    padding:50px 15px;
+}
+
+.founder-section .container{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.founder-image{
+    max-width:340px;
+    width:100%;
+    margin:auto;
+}
+
+.founder-content{
+    width:100%;
+    padding:30px 25px;
+    border-left:5px solid var(--secondary);
+}
+
+.founder-content h2{
+    font-size:34px;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.founder-content h2::after{
+    margin:12px auto 0;
+}
+
+
+/* MESSAGE */
+
+.message{
+
+    width:100%;
+    box-sizing:border-box;
+    position:relative;
+    margin:0 auto 25px;
+    padding:55px 24px 40px;
+    font-size:15px;
+    line-height:1.8;
     text-align:left;
+
+    border-radius:25px;
+    background:#fff;
+
+    border:2px solid #edf6ed;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.message::before{
+
+    content:"❝";
+    position:absolute;
+    top:15px;
+    left:15px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--secondary);
+    font-size:34px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+}
+
+.message::after{
+
+    content:"❞";
+    position:absolute;
+    right:18px;
+    bottom:10px;
+
+    font-size:48px;
+    color:#dce8d8;
+
+}
+
+.message{
+
+    background-image:
+    linear-gradient(var(--secondary),var(--secondary)),
+    linear-gradient(var(--secondary),var(--secondary));
+
+    background-repeat:no-repeat;
+
+    background-size:
+    2px 55px,
+    80px 2px;
+
+    background-position:
+    right 18px bottom 18px,
+    right 18px bottom 18px;
+
+}
+
+
+/* Founder */
+
+.founder-info{
+    margin-top:25px;
+}
+
+.founder-info h3{
+    font-size:28px;
+}
+
+.founder-info h4{
+    font-size:18px;
+}
+
+.founder-tagline{
+    width:180px;
+}
+
+
+/* Company */
+
+.company-card{
+    margin-top:30px;
+    padding:20px;
+    border-top:1px solid var(--border);
+}
+
+.company-card h3{
+    font-size:26px;
+}
+
+.company-card p{
+    font-size:15px;
+    line-height:1.8;
 }
 
 }
 
-
-
-
-/*=========================
-          Mobile
-==========================*/
-
-@media (max-width:768px){
-
-    .founder-section{
-        padding:50px 15px;
-    }
-
-    .founder-section .container{
-        width:100%;
-        display:grid;
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .founder-image{
-        max-width:340px;
-        width:100%;
-        margin:auto;
-    }
-
-    .founder-content{
-        width:100%;
-        padding:0;
-        display:block;
-    }
-
-    .founder-content h2{
-        font-size:36px;
-        line-height:1.2;
-        text-align:center;
-        margin-bottom:25px;
-    }
-
-    /*=========================
-          MESSAGE BOX
-    =========================*/
-
-    .message{
-
-        width:100%;
-
-        max-width:100%;
-
-        box-sizing:border-box;
-
-        position:relative;
-
-        margin:0 auto 25px;
-
-        padding:55px 24px 40px;
-
-        font-size:15px;
-
-        line-height:1.6;
-
-        text-align:left;
-
-        border-radius:28px;
-
-        background:#fff;
-
-        border:2px solid #edf6ed;
-
-        box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-    }
-
-    .message::before{
-
-        content:"❝";
-
-        position:absolute;
-
-        top:15px;
-
-        left:15px;
-
-        width:48px;
-
-        height:48px;
-
-        border-radius:50%;
-
-        background:#fff;
-
-        display:flex;
-
-        align-items:center;
-
-        justify-content:center;
-
-        color:#16863a;
-
-        font-size:34px;
-
-        box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-    }
-
-    .message::after{
-
-        content:"❞";
-
-        position:absolute;
-
-        right:18px;
-
-        bottom:10px;
-
-        font-size:48px;
-
-        color:#dce8d8;
-
-    }
-
-    .message{
-        background-image:
-        linear-gradient(#27a844,#27a844),
-        linear-gradient(#27a844,#27a844);
-
-        background-repeat:no-repeat;
-
-        background-size:2px 55px,80px 2px;
-
-        background-position:
-        right 18px bottom 18px,
-        right 18px bottom 18px;
-    }
-
-    /*=========================
-        Founder Info
-    =========================*/
-
-    .founder-info{
-        width:100%;
-        text-align:center;
-        margin-top:15px;
-    }
-
-    .founder-info h3{
-        font-size:24px;
-        margin-bottom:8px;
-    }
-
-    .founder-info h4{
-        font-size:18px;
-        margin-bottom:12px;
-    }
-
-    .founder-tagline{
-        width:190px;
-        display:block;
-        margin:auto;
-    }
-
-    /*=========================
-          Company Card
-    =========================*/
-
-    .company-card{
-
-        width:100%;
-
-        box-sizing:border-box;
-
-        margin-top:25px;
-
-        padding:22px;
-
-        border-radius:20px;
-
-    }
-
-    .company-card h3{
-        font-size:18px;
-    }
-
-    .company-card h4{
-        font-size:18px;
-    }
-
-    .company-card p{
-        font-size:15px;
-        line-height:1.7;
-    }
-
-}
 
 /*=====================================================
                 SMALL MOBILE
@@ -1213,94 +1265,85 @@ line-height:1.7;
 
 @media(max-width:480px){
 
-    .founder-section{
-        padding:45px 15px;
-    }
-
-    .founder-section .container{
-        width:100%;
-        gap:20px;
-    }
-
     .founder-image{
-        width:100%;
-        max-width:320px;
-        margin:auto;
-    }
+    width:300px;
+    height:300px;
+}
 
-    .founder-content{
-        width:100%;
-        padding:0;
-    }
+.founder-section{
+    padding:45px 15px;
+}
 
-    .founder-content h2{
-        font-size:28px;
-        text-align:center;
-        margin-bottom:20px;
-    }
+.founder-section .container{
+    gap:20px;
+}
 
-    .message{
-        width:100%;
-        padding:55px 22px 40px;
-        font-size:15px;
-        line-height:1.65;
-        border-radius:25px;
-        margin-bottom:25px;
-    }
-
-    .message::before{
-        width:46px;
-        height:46px;
-        left:15px;
-        top:15px;
-        font-size:32px;
-    }
-
-    .message::after{
-        font-size:46px;
-        right:15px;
-        bottom:12px;
-    }
-
-    .company-card{
+.founder-image{
     width:100%;
-    padding:15px 5px 30px;
-    margin-top:30px;
-
-    border-bottom:1px solid #e8e8e8;
+    max-width:320px;
+    margin:auto;
 }
 
-.company-card h3{
-    font-size:20px;
-    margin-bottom:15px;
-    margin-left: 40px; 
+.founder-content{
+    padding:25px 18px;
 }
 
-.company-card p{
+.founder-content h2{
+    font-size:28px;
+}
+
+.message{
+    padding:55px 20px 40px;
     font-size:15px;
-    line-height:1.8;
-    margin-top:15px;
-    margin-left: 30px;
+    line-height:1.75;
 }
+
+.message::before{
+    width:44px;
+    height:44px;
+    font-size:30px;
+}
+
+.message::after{
+    font-size:42px;
+}
+
+
+/* Founder */
 
 .founder-info{
     margin-top:30px;
-    padding-top:8px;
 }
 
 .founder-info h3{
-    font-size:23px;
-    line-height:1.35;
+    font-size:24px;
 }
 
 .founder-info h4{
     font-size:17px;
-    margin:10px 0 18px;
 }
 
 .founder-tagline{
-    width:170px;
-    margin:0 auto;
+    width:165px;
+}
+
+
+/* Company */
+
+.company-card{
+    margin-top:30px;
+    padding:20px 10px;
+}
+
+.company-card h3{
+    font-size:24px;
+    margin:0 0 15px;
+}
+
+.company-card p{
+    font-size:15px;
+    line-height:1.75;
+    margin:0;
 }
 
 }
@@ -3051,15 +3094,9 @@ SERVICES
 
 /* Decorative Background */
 
-.footer-pattern-left{
-    position:absolute;
-    top:25px;
-    left:25px;
-    width:90px;
-    height:90px;
-    background-image:radial-gradient(rgba(255,255,255,.15) 2px,transparent 2px);
-    background-size:18px 18px;
-}
+    .footer-pattern-left{
+        display:none;
+    }
 
 .footer-pattern-right{
     position:absolute;
@@ -3075,20 +3112,36 @@ SERVICES
       Brand Section
 ==============================*/
 
+.footer-tagline{
+    width:240px;      /* Increase size */
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:15px auto 20px;
+
+    filter: brightness(1.3);
+}
+
 .footer-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    margin-bottom:55px;
+    margin-bottom:90px;   /* Increased spacing */
 }
 
 .footer-logo{
-    width:95px;
-    margin-bottom:15px;
+    width:120px;
+    display:block;
+    margin-bottom:35px;
 }
 
 .footer-brand h2{
+    margin:0;
     font-size:58px;
     font-weight:800;
-    margin-bottom:18px;
+    line-height:1.2;
 }
 
 .green-text{
@@ -3100,20 +3153,20 @@ SERVICES
 }
 
 .footer-line{
-    width:90px;
+    width:110px;
     height:5px;
-    border-radius:20px;
-    background:#41d44a;
-    margin:auto;
-    margin-bottom:28px;
+    background:#45d143;
+    border-radius:30px;
+    margin:28px auto;
 }
 
 .footer-brand p{
     font-size:28px;
+    color:#f2f2f2;
     line-height:1.7;
-    color:#f3f3f3;
-    margin-bottom:35px;
+    margin:0;
 }
+
 
 /*==============================
       Social Icons
@@ -3178,6 +3231,7 @@ SERVICES
     border:1px solid rgba(90,220,130,.25);
     border-left:4px solid #46d34c;
     padding:35px;
+    margin-top:30px;      /* NEW */
     margin-bottom:34px;
     box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
@@ -3208,10 +3262,6 @@ SERVICES
     flex:1;
 }
 
-.leaf{
-    color:#49d54b;
-    font-size:26px;
-}
 
 .card-divider{
     height:1px;
@@ -3342,6 +3392,18 @@ SERVICES
 
 @media(max-width:992px){
 
+    .footer-brand{
+        margin-bottom:60px;
+    }
+
+    .footer-card{
+        margin-top:25px;
+    }
+
+    .footer-logo{
+        width:100px;
+    }
+
     .footer-brand h2{
         font-size:42px;
     }
@@ -3377,17 +3439,25 @@ SERVICES
 
 @media(max-width:768px){
 
+    .footer-brand{
+        margin-bottom:60px;
+    }
+
+    .footer-card{
+        margin-top:25px;
+    }
+
     .footer{
         padding:60px 20px 25px;
     }
 
     .footer-logo{
-        width:72px;
+        width:80px;
+        margin-bottom:18px;
     }
 
     .footer-brand h2{
         font-size:34px;
-        line-height:1.3;
     }
 
     .footer-line{
@@ -3465,12 +3535,20 @@ SERVICES
 
 @media (max-width:480px){
 
+    .footer-brand{
+        margin-bottom:50px;
+    }
+
+    .footer-card{
+        margin-top:20px;
+    }
+
     .footer{
         padding:50px 15px 20px;
     }
 
     .footer-logo{
-        width:55px;
+        width:65px;
     }
 
     .footer-brand h2{
@@ -3504,6 +3582,11 @@ SERVICES
 
     .card-title h3{
         font-size:22px;
+    }
+
+    .quick-links{
+        grid-template-columns:1fr;
+        width: %;
     }
 
     .quick-links a{
