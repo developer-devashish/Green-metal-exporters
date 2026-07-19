@@ -450,7 +450,7 @@ iframe{
 @media (max-width:768px){
 
     .company-logo{
-        transform: translateX(-190px);        
+        transform: translateX(-160px);        
         display: flex;
         align-items: left;
         justify-content: flex-start;
@@ -578,7 +578,7 @@ iframe{
 
 
     .company-logo{
-        transform: translateX(-55px);        
+        transform: translateX(-85px);        
         display: flex;
         align-items: left;
         justify-content: flex-start;
