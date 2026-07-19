@@ -71,25 +71,13 @@ iframe{
 
 
 
-/* =========================
+/*==========================
         LOGO
-========================= */
-
-.company-logo img {
-    width: 100%;
-    max-width: 400px; /* Adjust as needed */
-    height: auto;
-    display: block;
-}
+==========================*/
 
 .logo{
     display:flex;
     align-items:center;
-    gap:15px;
-}
-
-.logo img{
-    width:130px;
 }
 
 .logo-text{
@@ -98,38 +86,160 @@ iframe{
     justify-content:center;
 }
 
-/* Remove any decorative line */
-.logo-text::before,
-.logo-text::after,
-.logo-text h1::before,
-.logo-text h1::after{
-    content:none !important;
-    display:none !important;
+/* Top */
+
+.logo-top{
+
+    display:flex;
+    align-items:center;
+
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:900;
+
+    font-size:58px;
+    line-height:1;
+
+    letter-spacing:-2px;
+
 }
-
-.logo-text h1{
-    font-size:4rem;
-    line-height:1.1;
-    margin:0;
-    padding:0;
-}
-
-
 
 .greens{
-    color:#139548
+
+    color:#16953f;
+
 }
 
 .grays{
-    color:#555;
+
+    color:#4f5664;
+
+    margin-left:12px;
+
 }
 
-.logo-text p{
-    font-size:1rem;
-    font-weight:600;
-    margin-top:5px;
+/* Bottom */
+
+.logo-bottom{
+
+    text-align:center;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    letter-spacing:16px;
+
+    color:#232b39;
+
+    margin-top:10px;
+
+    margin-left:16px;
+
 }
 
+/* tablet */
+@media(max-width:992px){
+
+    .logo-top{
+        font-size:42px;
+    }
+
+    .logo-bottom{
+        font-size:14px;
+        letter-spacing:10px;
+    }
+
+}
+
+/* mobile */
+@media(max-width:768px){
+
+    .logo-top{
+
+        font-size:22px;
+
+        letter-spacing:-1px;
+
+    }
+
+    .grays{
+
+        margin-left:5px;
+
+    }
+
+    .logo-bottom{
+
+        font-size:8px;
+
+        letter-spacing:5px;
+
+        margin-top:3px;
+
+        margin-left:6px;
+
+    }
+
+}
+
+/* small mobile */
+@media (max-width:480px){
+
+    .container{
+        padding:10px 12px;
+    }
+
+    .logo{
+        display:flex;
+        align-items:center;
+        flex:1;
+        overflow:hidden;
+    }
+
+    .logo-text{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+    /* GREEN METTLE */
+    .logo-top{
+        display:flex;
+        align-items:center;
+        font-size:14px;
+        font-weight:900;
+        line-height:1;
+        letter-spacing:-0.5px;
+        white-space:nowrap;
+    }
+
+    .greens{
+        color:#16953f;
+    }
+
+    .grays{
+        color:#555;
+        margin-left:4px;
+    }
+
+    /* EXPORTERS */
+    .logo-bottom{
+        margin-top:3px;
+        text-align:left;
+        font-size:8px;
+        font-weight:700;
+        letter-spacing:3px;
+        color:#232b39;
+        white-space:nowrap;
+        margin-left:16px;
+    }
+
+    .menu-toggle{
+        margin-left:10px;
+    }
+}
 /* =========================
       NAVBAR
 ========================= */
