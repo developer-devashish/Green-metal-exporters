@@ -290,19 +290,17 @@ iframe{
     height:auto;
 }
 
- .company-logo{
-    transform: translateX(-35px);        
-    flex:1;
+.company-logo{
     display:flex;
     align-items:center;
+    gap:18px;   
 }
 
 .company-logo img{
-    width:100%;
-    max-width:420px;
-    height:auto;
-    display:block;
-    object-fit:contain;
+    width: 420px;
+    height: auto;
+    display: block;
+    padding-right: 90px;
 }
 
 .logo-text{
@@ -415,10 +413,9 @@ iframe{
 @media(max-width:992px){
 
     .company-logo{
-        transform: translateX(-120px);        
-        display: flex;
-        align-items: left;
-        justify-content: flex-start;
+        display:flex;
+        align-items:center;
+        gap:18px;   
     }
 
     .company-logo img{
@@ -449,75 +446,45 @@ iframe{
 
 @media (max-width:768px){
 
-    .company-logo{
-        transform: translateX(-250px);        
-        display: flex;
-        align-items: left;
-        justify-content: flex-start;
-    }
-
-    .company-logo img{
-        width: 170px;      /* Adjust as needed */
-        max-width: 170px;
-        height: auto;
-    }
-
-
     .container{
         display:flex;
         align-items:center;
         justify-content:space-between;
-        padding:10px 6px 10px 6px;
+        padding:10px 15px;
     }
 
     /* Logo */
     .logo{
         display:flex;
         align-items:center;
-        justify-content:flex-start;
-        gap:1px;
-        flex:1;
+        gap:10px;
+        flex:0 0 auto;
     }
 
     .logo img{
-        width:80px;
+        width:55px;
         height:auto;
-        flex-shrink:0;
+        display:block;
     }
 
-    .logo-text{
-        display:block;      /* Override desktop */
-        text-align:left;
-        flex:1;
+    .logo-text img{
+        width:150px;
+        height:auto;
+        display:block;
     }
 
-    .logo-text h1{
-        display:block;      /* Override desktop flex */
-        margin:0;
-        font-size:16px;
-        line-height:1.2;
-        white-space:nowrap;
-        text-align:left;
-    }
-
-    .greens,
-    .grays{
-        display:inline;
-    }
-
-    /* Hide desktop button */
+    /* Hide desktop quote button */
     .quote-btn{
         display:none !important;
     }
 
     /* Hamburger */
     .menu-toggle{
-        display:flex;
-        margin-left:15px;
-        flex-shrink:0;
+        display:flex !important;
+        margin-left:auto;
     }
 
-    /* Mobile navbar */
+    /* Mobile Navbar */
     .navbar{
         position:absolute;
         top:100%;
@@ -528,17 +495,21 @@ iframe{
         overflow:hidden;
         transition:max-height .4s ease;
         box-shadow:0 8px 15px rgba(0,0,0,.08);
+        z-index:999;
     }
 
     .navbar.active{
-        max-height:500px;
+        max-height:100vh;
+        overflow-y:auto;
     }
 
     .nav-links{
         display:flex;
         flex-direction:column;
-        gap:0;
         width:100%;
+        margin:0;
+        padding:0;
+        list-style:none;
     }
 
     .nav-links li{
@@ -553,40 +524,52 @@ iframe{
     .nav-links a{
         display:block;
         width:100%;
-        padding:18px 22px;
+        padding:18px 20px;
+        text-decoration:none;
     }
 
+    /* Mobile Quote Button */
     .mobile-quote{
-        display:block;
-        width:100%;
+        display:block !important;
+        list-style:none;
         padding:20px;
+        border-bottom:none !important;
     }
 
     .quote-mobile-btn{
-        display:block;
+        display:block !important;
         width:100%;
-        text-align:center;
         background:#123d8d;
         color:#fff !important;
+        text-align:center;
+        text-decoration:none;
         padding:14px 20px;
         border-radius:8px;
+        font-weight:600;
+        box-sizing:border-box;
+    }
+
+    .quote-mobile-btn:hover{
+        background:#0f3277;
     }
 
 }
+
 
 @media (max-width:468px){
 
 
     .company-logo{
-        transform: translateX(-45px);        
-        display: flex;
-        align-items: left;
-        justify-content: flex-start;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        gap:6px;
     }
 
     .company-logo img{
-        width: 170px;      /* Adjust as needed */
-        max-width: 170px;
+        width: 200px;      /* Adjust as needed */
+        max-width: 200px;
         height: auto;
     }
 
