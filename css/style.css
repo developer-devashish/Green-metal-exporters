@@ -1253,6 +1253,7 @@ margin-bottom:20px;
     padding:30px 15px;
     text-align:center;
     border-top:1px solid var(--border);
+
 }
 
 .company-card h3{
@@ -1260,6 +1261,8 @@ margin-bottom:20px;
     color:var(--primary);
     margin-bottom:18px;
     font-weight:700;
+    color:#555;
+
 }
 
 .company-card p{
@@ -3351,8 +3354,9 @@ SERVICES
 ==============================*/
 
 .footer{
+    /* background:#0f3fa6; */
     position:relative;
-    background:#0f3fa6;
+    background:#555;
     color:#fff;
     padding:70px 7% 30px;
     overflow:hidden;
